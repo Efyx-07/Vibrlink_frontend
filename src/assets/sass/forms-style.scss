@@ -1,0 +1,71 @@
+@import './colors.scss';
+
+form {
+    width: 100%;
+    max-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        .mention {
+            font-size: .75rem;
+            font-weight: 300;
+            opacity: .5;
+        }
+
+        .input-wrapper {
+            width: 100%;
+            position: relative;
+
+            input {
+                width: 100%;
+                height: 4rem;
+                background: $darkColorRelief;
+                border: solid 1px rgba($whiteColor, .1);
+                outline: none;
+                color: $whiteColor;
+                padding-left: 1rem;
+                font-size: .9rem;
+                font-weight: 400;
+    
+                &:focus {
+                    border: solid 1px $accentColor;
+                }
+            }
+    
+            .password-input {
+                letter-spacing: 5px;
+            }
+
+            .isValid-icon {
+                position: absolute;
+                top: 50%;
+                right: 1rem;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    .error-message {
+        font-size: .9rem;
+        font-weight: 600;
+        align-self: flex-end;
+        color: $errorColor;
+    }
+
+    .spinner-container {
+        height: 4.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-button {
+        align-self: flex-end;
+    }
+}

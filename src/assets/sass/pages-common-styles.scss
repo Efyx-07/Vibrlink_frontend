@@ -1,0 +1,34 @@
+@import './breakpoints.scss';
+
+.page {
+    width: 100%;
+    min-height: calc(100dvh - 12rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+        width: 100%;
+        max-width: 75rem;
+        height: 100%;
+        padding: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: $breakpointLargeTablet) {
+    
+    .page .content {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (min-width: $breakpointLargeDesktop) {
+    .page .content {
+        max-width: 90rem;
+    }
+}

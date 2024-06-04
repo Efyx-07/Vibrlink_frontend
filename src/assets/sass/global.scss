@@ -1,0 +1,29 @@
+@import './colors.scss';
+
+*, 
+*:before, 
+*:after {
+    box-sizing: border-box;
+}
+html {
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0 auto;
+    background: $darkColor;
+    color: $whiteColor;
+}
+
+p, h1, h2, h3 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: $whiteColor;
+}

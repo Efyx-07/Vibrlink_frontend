@@ -1,0 +1,17 @@
+@import './breakpoints.scss';
+
+.message-and-form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 2rem;
+}
+
+@media (min-width: $breakpointLargeTablet) {
+
+    .message-and-form-container {
+        flex-direction: unset;
+    }
+}

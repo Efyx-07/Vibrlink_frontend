@@ -5,7 +5,7 @@ import { validateData } from "@/hooks/validateData";
 import { login } from "@/services/authService";
 import UserFormField from "./UserFormField";
 import FormButton from "../Shared/FormButton";
-//import LoadingSpinner from "../common/LoadingSpinner";
+import LoadingSpinner from "../Shared/LoadingSpinner";
 import '../../../assets/sass/forms-style.scss';
 
 export default function LoginForm() {
@@ -77,7 +77,7 @@ export default function LoginForm() {
             {errorMessage && <p className="error-message">Wrong email or password !</p>}
             {isLoading ? (
                 <div className="spinner-container">
-                    {/* <LoadingSpinner /> */}
+                    <LoadingSpinner />
                 </div>
             ) : <FormButton type="submit" name="Log in" />}
         </form>  

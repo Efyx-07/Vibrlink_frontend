@@ -3,7 +3,7 @@
 import MainLayout from "../layouts/MainLayout";
 import { useState } from "react";
 import LoginForm from "../components/User-forms/LoginForm";
-//import AskResetPasswordForm from "../components/user-forms/AskResetPasswordForm";
+import AskResetPasswordForm from "../components/User-forms/AskResetPasswordForm";
 import FormPageMessage from "../components/Shared/FormPageMessage";
 import StyledSeparator from "../components/Shared/StyledSeparator";
 import '../../assets/sass/pages-common-styles.scss';
@@ -52,7 +52,7 @@ export default function LoginPage() {
                                 <FormPageMessage mainTextPrimary={mainTextPrimary2} mainTextSecondary={mainTextSecondary2} subText={subText2} />
                                 <StyledSeparator icon="emojione-monotone:face-screaming-in-fear" />
                                 <div className="form-container">
-                                    {/* <AskResetPasswordForm /> */}
+                                    <AskResetPasswordForm />
                                     <p className="option" onClick={showLoginForm}>Back to sign in</p>
                                 </div>
                             </div>

@@ -44,8 +44,8 @@ export default function HoverUserMenu() {
                     <p>{user?.email}</p>
                 </div>
                 <UserItem name="Update password" icon="mdi:tools" onClick={navToSettings} />
-                <UserItem name="Delete account" icon="mdi:skull-crossbones" onClick={() => {}} />
-                <UserItem name="Sign out" icon="material-symbols:logout-sharp" onClick={() => {}} />
+                {/* <UserItem name="Delete account" icon="mdi:skull-crossbones" onClick={() => {}} />
+                <UserItem name="Sign out" icon="material-symbols:logout-sharp" onClick={() => {}} /> */}
             </div>
         </div>
         </>

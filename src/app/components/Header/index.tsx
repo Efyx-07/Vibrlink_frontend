@@ -4,8 +4,8 @@ import { useState } from 'react';
 import SiteName from './SiteName';
 import Navigation from './Navigation';
 import MyAccountItem from './MyAccountItem';
-//import MobileMenu from './MobileMenu';
-//import MobileMenuIcon from './MobileMenuIcon';
+import MobileMenu from './MobileMenu';
+import MobileMenuIcon from './MobileMenuIcon';
 import './Header.scss';
 
 export default function Header() {
@@ -31,17 +31,17 @@ export default function Header() {
                 </div>
                 <div className="nav-wrapper-mobile">
                     <MyAccountItem />
-                    {/* <MobileMenuIcon 
+                    <MobileMenuIcon 
                         isOpen={isOpen}
                         onOpenClick={openMobileMenu}
                         onCloseClick={closeMobileMenu}
-                    /> */}
+                    />
                 </div>
             </div>
-            {/* <MobileMenu
+            <MobileMenu
                 isOpen={isOpen}
                 closeMenu={closeMobileMenu} 
-             /> */}
+            />
         </header>
     )
 };

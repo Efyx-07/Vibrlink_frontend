@@ -7,6 +7,10 @@ interface State {
     isDeleteAccountModalOpen: boolean;
     openDeleteAccountModal: () => void;
     closeDeleteAccountModal: () => void;
+    isRemoveReleaseModalOpen: boolean;
+    openRemoveReleaseModal: (releaseId: number) => void;
+    closeRemoveReleaseModal: () => void;
+    modalReleaseId: number | null;
 };
 
 const useModalStore = create<State>((set, get) => ({
@@ -23,6 +27,16 @@ const useModalStore = create<State>((set, get) => ({
     },
     closeDeleteAccountModal() {
         set({isDeleteAccountModalOpen: false});
+    },
+    isRemoveReleaseModalOpen: false,
+    modalReleaseId: null,
+    openRemoveReleaseModal(releaseId) {
+        set({modalReleaseId: releaseId}),
+        set({isRemoveReleaseModalOpen: true})
+    },
+    closeRemoveReleaseModal() {
+        set({modalReleaseId: null}),
+        set({isRemoveReleaseModalOpen: false})
     },
 }));
 

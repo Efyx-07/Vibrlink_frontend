@@ -11,11 +11,11 @@ export default function MainLayout({
   children: React.ReactNode;
 }>) {
 
-  // const loading = useAppInitializer();
+  const loading = useAppInitializer();
 
-  // if (loading) {
-  //   return <div><LoadingSpinner /></div>
-  // }
+  if (loading) {
+    return <div><LoadingSpinner /></div>;
+  }
 
   return (
     <>

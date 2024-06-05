@@ -42,7 +42,7 @@ export default function Navigation({onItemClick}: NavigationProps) {
 
     const loggedInNavItems: NavItemProps[] = [
         { name: 'New vibrlink', navTo: '/new-vibrlink' },
-        { name: 'My vibrlinks', navTo: '/my-vibrlinks' }
+        { name: 'My vibrlinks', navTo: '/my-links' }
     ];
 
     return (

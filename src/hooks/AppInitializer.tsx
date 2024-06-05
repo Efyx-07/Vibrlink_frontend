@@ -48,7 +48,7 @@ function useAppInitialization(): boolean {
         };
 
         initApp();
-    });
+    }, []);
 
     return loading; 
 };

@@ -1,0 +1,15 @@
+@import '../../../assets/sass/breakpoints.scss';
+
+.linkEditor-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media (min-width: $breakpointLargeTablet)  {
+
+    .linkEditor-wrapper {
+        gap: 4rem;
+    }
+}

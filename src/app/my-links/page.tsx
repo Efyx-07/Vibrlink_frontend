@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { useUserStore, useReleaseStore } from "@/stores";
 import { useRouter } from "next/navigation";
 //import DashboardReleaseCard from "../components/cards/DashboardReleaseCard";
-//import PageTitle from "../components/common/PageTitle";
+import PageTitle from "../components/Shared/PageTitle";
 import FormButton from "../components/Shared/FormButton";
 import '../../assets/sass/pages-common-styles.scss';
 import './MyLinksPage.scss';
@@ -44,7 +44,7 @@ export default function MyLinksPage() {
                         {releases.length > 0 ? 
                             (
                                 <>
-                                    {/* <PageTitle mainPart="Manage" secondaryPart="your vibrlinks"/> */}
+                                    <PageTitle mainPart="Manage" secondaryPart="your vibrlinks"/>
                                     <div className="dashboard-releaseCards-container">
                                         {reversedReleases.map(release => (
                                             <p key={release.id}>{release.title}</p>

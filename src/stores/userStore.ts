@@ -15,7 +15,7 @@ interface State {
 const useUserStore = create<State>((set, get) => ({
     user: null,
     token: null,
-    isLoggedIn: false,
+    isLoggedIn: true,
     setToken: (newToken) => {
         set({ token: newToken, isLoggedIn: !!newToken });
         localStorage.setItem('token', newToken ?? '');

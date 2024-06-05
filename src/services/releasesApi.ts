@@ -1,6 +1,6 @@
 import type { Release, Platform } from "../types/releaseTypes";
 
-const hostName: string | undefined = process.env.NEXT_BACKEND_URL;
+const hostName: string | undefined = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 // fetch the releases data by userId 
 export async function fetchReleasesData(userId: number): Promise<Release[]> {

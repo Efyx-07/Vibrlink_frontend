@@ -1,5 +1,5 @@
 // backend server address
-const hostName: string | undefined = process.env.NEXT_BACKEND_URL;
+const hostName: string | undefined = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 // backend query to create a new link
 export async function createLink(albumUrl: string, userId: number | undefined): Promise <{ releaseSlug: string }> {

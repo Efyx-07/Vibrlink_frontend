@@ -1,5 +1,5 @@
 import { useUserStore, useReleaseStore } from '@/stores';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import isTokenExpired from './VerifyUserTokenExpiry';
 import { useRouter } from 'next/navigation';
 
@@ -20,8 +20,8 @@ export default function useAppInitializer() {
 // initialize the app
 function useAppInitialization(): boolean {
 
-    const userStore = useUserStore();
-    const releaseStore = useReleaseStore();
+    const userStoreRef = useRef(useUserStore());
+    const releaseStoreRef = useRef(useReleaseStore());
     // state to manage the render if the user is logged or not
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -29,15 +29,15 @@ function useAppInitialization(): boolean {
     useEffect(() => {
         const initApp = async (): Promise<void> => {
             try {
-                await userStore.loadUserDataFromLocalStorage();
+                await userStoreRef.current.loadUserDataFromLocalStorage();
                 const token = localStorage.getItem('token');
 
                 if (token) {
-                    userStore.setToken(token);
-                    const userId = userStore.user?.id;
+                    userStoreRef.current.setToken(token);
+                    const userId = userStoreRef.current.user?.id;
 
                     if (userId) {
-                        await releaseStore.loadReleasesData(userId);
+                        await releaseStoreRef.current.loadReleasesData(userId);
                     }
                 }
             } catch (error) {

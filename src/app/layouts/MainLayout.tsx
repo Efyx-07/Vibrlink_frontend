@@ -4,6 +4,7 @@ import useAppInitializer from "@/hooks/AppInitializer";
 import LoadingSpinner from "../components/Shared/LoadingSpinner";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import './MainLayout.scss';
 
 export default function MainLayout({
   children,
@@ -13,15 +14,21 @@ export default function MainLayout({
 
   const loading = useAppInitializer();
 
-  if (loading) {
-    return <div><LoadingSpinner /></div>;
-  }
-
   return (
     <>
-      <Header/>
-      <main>{children}</main>
-      <Footer/>
+      {loading ? 
+        (
+          <div className="spinner-container"><LoadingSpinner /></div>
+        )
+        :
+        (
+          <>
+            <Header/>
+            <main>{children}</main>
+            <Footer/>
+          </>
+        )
+      }
     </>
   );
 }

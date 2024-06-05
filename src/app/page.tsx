@@ -1,7 +1,11 @@
+import MainLayout from "./layouts/MainLayout"
 
-
-export default function Home() {
-  return (
-    <div>HOME</div>
-  );
+export default function HomePage() {
+    return (
+        <>
+            <MainLayout>
+                <h1>Je suis la homepage</h1>
+            </MainLayout>
+        </>
+    )
 }

@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { openInANewTab } from "@/hooks/openInANewTab";
 import Image from "next/image";
 import DBCardButton from "./DBCardButton";
-//import CopyToClipboardButton from "./CopyToClipboardButton";
+import CopyToClipboardButton from "./CopyToClipboardButton";
 import './DBCardButton.scss';
 import './DashboardReleaseCard.scss';
 
@@ -60,8 +60,8 @@ export default function DashboardReleaseCard({ release }: DashboardReleaseCardPr
                 <div className="buttons-container">
                     <DBCardButton name="Edit link" icon="mdi:tools" onClick={() => navToReleaseToEditPage(release.slug)}/>
                     <DBCardButton name="Delete link" icon="mdi:skull-crossbones" onClick={() => openRemoveReleaseModal(release.id)}/>
-                    {/* <DBCardButton name="View landing page" icon="mdi:telescope" onClick={() => navToReleaseLandingPage(release.slug)} />
-                    <CopyToClipboardButton release={release} /> */}
+                    <DBCardButton name="View landing page" icon="mdi:telescope" onClick={() => navToReleaseLandingPage(release.slug)} />
+                    <CopyToClipboardButton release={release} />
                 </div>
             }    
         </div>

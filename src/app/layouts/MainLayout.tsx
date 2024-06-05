@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import SignoutModal from "../components/Modals/SignoutModal";
 import DeleteAccountModal from "../components/Modals/DeleteAccountModal";
+import RemoveReleaseModal from "../components/Modals/RemoveReleaseModal";
 import './MainLayout.scss';
 
 export default function MainLayout({
@@ -30,6 +31,7 @@ export default function MainLayout({
             <Footer/>
             <SignoutModal />
             <DeleteAccountModal />
+            <RemoveReleaseModal />
           </>
         )
       }

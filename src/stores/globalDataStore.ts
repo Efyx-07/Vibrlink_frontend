@@ -8,8 +8,8 @@ interface State {
 };
 
 const useGlobalDataStore = create<State>(() => ({
-    hostName: process.env.NEXT_BACKEND_URL,
-    frontendAddress: process.env.NEXT_FRONTEND_URL,
+    hostName: process.env.NEXT_PUBLIC_BACKEND_URL,
+    frontendAddress: process.env.NEXT_PUBLIC_FRONTEND_URL,
     siteName: 'VibrLink',
     currentYear: new Date().getFullYear(),
 }));

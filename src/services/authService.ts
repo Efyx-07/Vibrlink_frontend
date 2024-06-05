@@ -1,5 +1,5 @@
 // backend server address
-const hostName: string | undefined = process.env.NEXT_BACKEND_URL;
+const hostName: string | undefined = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 // backend query for user login
 export async function login(email: string, password: string) {

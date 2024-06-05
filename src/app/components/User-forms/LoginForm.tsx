@@ -41,7 +41,7 @@ export default function LoginForm() {
             localStorage.setItem('token', token);
             userStore.setToken(token);
 
-            router.push('/my-vibrlinks');
+            router.push('/my-links');
 
         } catch (error) {
             setErrorMessage(true);

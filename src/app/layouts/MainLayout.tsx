@@ -20,7 +20,7 @@ export default function MainLayout({
     <>
       {loading ? 
         (
-          <div className="spinner-container"><LoadingSpinner /></div>
+          <div className="page-spinner"><LoadingSpinner /></div>
         )
         :
         (

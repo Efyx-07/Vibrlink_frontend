@@ -4,6 +4,7 @@ import useAppInitializer from "@/hooks/AppInitializer";
 import LoadingSpinner from "../components/Shared/LoadingSpinner";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import SignoutModal from "../components/Modals/SignoutModal";
 import './MainLayout.scss';
 
 export default function MainLayout({
@@ -26,6 +27,7 @@ export default function MainLayout({
             <Header/>
             <main>{children}</main>
             <Footer/>
+            <SignoutModal />
           </>
         )
       }

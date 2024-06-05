@@ -2,11 +2,12 @@
 
 import MainLayout from "../layouts/MainLayout";
 import { useState } from "react";
-//import LoginForm from "../components/user-forms/LoginForm";
+import LoginForm from "../components/User-forms/LoginForm";
 //import AskResetPasswordForm from "../components/user-forms/AskResetPasswordForm";
 import FormPageMessage from "../components/Shared/FormPageMessage";
-//import StyledSeparator from "../components/common/StyledSeparator";
+import StyledSeparator from "../components/Shared/StyledSeparator";
 import '../../assets/sass/pages-common-styles.scss';
+import '../../assets/sass/messageAndFormContainer.scss';
 import './LoginPage.scss';
 
 export default function LoginPage() {
@@ -39,9 +40,9 @@ export default function LoginPage() {
 
                             <div className="message-and-form-container">
                                 <FormPageMessage mainTextPrimary={mainTextPrimary} mainTextSecondary={mainTextSecondary} subText={subText} />
-                                {/* <StyledSeparator icon="game-icons:brain-freeze" /> */}
+                                <StyledSeparator icon="game-icons:brain-freeze" />
                                 <div className="form-container">
-                                    {/* <LoginForm /> */}
+                                    <LoginForm />
                                     <p className="option" onClick={hideLoginForm}>I forgot my password</p>
                                 </div>
                             </div>
@@ -49,7 +50,7 @@ export default function LoginPage() {
                         :
                             <div className="message-and-form-container">
                                 <FormPageMessage mainTextPrimary={mainTextPrimary2} mainTextSecondary={mainTextSecondary2} subText={subText2} />
-                                {/* <StyledSeparator icon="emojione-monotone:face-screaming-in-fear" /> */}
+                                <StyledSeparator icon="emojione-monotone:face-screaming-in-fear" />
                                 <div className="form-container">
                                     {/* <AskResetPasswordForm /> */}
                                     <p className="option" onClick={showLoginForm}>Back to sign in</p>

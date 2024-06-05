@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { useUserStore } from '@/stores';
 import { useRouter } from 'next/navigation';
-//import FormButton from '../common/FormButton';
+import FormButton from '../Shared/FormButton';
 import './Hero.scss';
 
 export default function Hero() {
@@ -23,21 +23,21 @@ export default function Hero() {
                 <h1>Hey, it&apos;s the <span>big day </span>!<br/>Ready to launch your new music ?</h1>
                 <p>As a musician, we know how special this day is and how exciting it is to share your new release with your fan community. Let&apos;s do it!</p>
             </div>
-            {/* <div className="buttons-container">
+            <div className="buttons-container">
                 {isLogged ? 
                     (
-                        <FormButton type="button" name="Create a new vibrLink" onClick={() => navigate('/new-vibrlink')} id="hero-button"/>
+                        <FormButton type="button" name="Create a new vibrLink" onClick={() => router.push('/new-vibrlink')} id="hero-button"/>
                     )
                     :
                     (
                         <>
-                            <FormButton id="hero-button" type="button" name="Create a free account" onClick={() => navigate('/signup')}/>
+                            <FormButton id="hero-button" type="button" name="Create a free account" onClick={() => router.push('/signup')}/>
                             <p>or</p>
-                            <FormButton id="hero-button" type="button" name="Sign in" onClick={() => navigate('/login')}/>
+                            <FormButton id="hero-button" type="button" name="Sign in" onClick={() => router.push('/login')}/>
                         </>
                     )
                 }
-            </div> */}
+            </div>
         </div>
     )
 }

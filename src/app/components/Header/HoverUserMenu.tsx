@@ -1,7 +1,6 @@
 import { MouseEventHandler } from "react";
 import { useRouter } from "next/navigation";
 import { useUserStore, useModalStore } from "@/stores";
-//import { useModal } from "../../contexts/ModalContext";
 import { Icon } from '@iconify/react';
 import './HoverUserMenu.scss';
 
@@ -31,8 +30,7 @@ export default function HoverUserMenu() {
         router.push('/account-settings');
     };
 
-    const { openSignOutModal } = useModalStore();
-    //const { openDeleteAccountModal } = useModal();
+    const { openSignOutModal, openDeleteAccountModal } = useModalStore();
 
     return (
         <>
@@ -43,7 +41,7 @@ export default function HoverUserMenu() {
                     <p>{user?.email}</p>
                 </div>
                 <UserItem name="Update password" icon="mdi:tools" onClick={navToSettings} />
-                {/* <UserItem name="Delete account" icon="mdi:skull-crossbones" onClick={() => {}} /> */}
+                <UserItem name="Delete account" icon="mdi:skull-crossbones" onClick={openDeleteAccountModal} />
                 <UserItem name="Sign out" icon="material-symbols:logout-sharp" onClick={openSignOutModal} />
             </div>
         </div>

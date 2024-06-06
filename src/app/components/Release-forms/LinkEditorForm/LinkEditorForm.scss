@@ -8,18 +8,6 @@
     flex-direction: column;
     gap: 2rem;
 
-    .section-name {
-        width: 100%;
-        display: flex;
-        align-items: baseline;
-        gap: 1rem;
-
-        p {
-            white-space: nowrap;
-            font-size: 1.25rem;
-        }
-    }
-
     .generated-links, .manual-links {
         width: 100%;
         display: flex;

@@ -1,5 +1,5 @@
 import { Release } from '@/types/releaseTypes';
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Icon } from '@iconify/react';
 import './VCardCoverPlayer.scss';
@@ -14,23 +14,30 @@ export default function VCardCoverPlayer({selectedRelease}: SelectedReleaseProps
 
     // state for the playing status of the audio preview
     const [isPlaying, setIsPlaying] = useState<boolean>(false);
-    const [audio] = useState(new Audio());
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+
+    // initialize the Audio object only on the client side
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            audioRef.current = new Audio();
+        }
+    }, []);
 
     // an audio preview has a duration time of 30s. function to launch the preview and reset the player after 30s
     const playPreview = (previewUrl: string): void => {
-        if (previewUrl) {
-          audio.src = previewUrl;
-          audio.play();
-          setIsPlaying(true);
-          setTimeout(() => {
-            setIsPlaying(false);
-        }, 30000);
+        if (previewUrl && audioRef.current) {
+            audioRef.current.src = previewUrl;
+            audioRef.current.play();
+            setIsPlaying(true);
+            setTimeout(() => {
+                setIsPlaying(false);
+            }, 30000);
         }
     };
 
     // stop the preview
     const stopPreview = (): void => {
-        audio.pause();
+        audioRef.current?.pause();
         setIsPlaying(false);
     };
 

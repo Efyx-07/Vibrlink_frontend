@@ -19,6 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.className}>
+      <head>
+        <link rel="icon" type="image/ico" href="/vibrlink-favicon.ico" />
+      </head>
       <body>
         {children}
       </body>

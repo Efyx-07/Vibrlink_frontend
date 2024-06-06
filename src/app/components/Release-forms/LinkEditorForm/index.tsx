@@ -6,7 +6,7 @@ import LinkEditorPlatformField from "./LinkEditorPlatformField";
 import LinkEditorSelect from "./LinkEditorSelect";
 import LoadingSpinner from "../../Shared/LoadingSpinner";
 import FormButton from "../../Shared/FormButton";
-import Separator from "../../Shared/Separator";
+import SectionTitle from "../../Shared/SectionTitle";
 import './LinkEditorForm.scss';
 
 interface SelectedReleaseProps {
@@ -107,18 +107,5 @@ export default function LinkEditorForm({ selectedRelease }: SelectedReleaseProps
                 </div>
             ) : <FormButton type="submit" name="Update link" />}
         </form>
-    );
-}
-
-interface SectionTitleProps {
-    name: string;
-}
-
-function SectionTitle({ name }: SectionTitleProps) {
-    return (
-        <div className="section-name">
-            <p>{name}</p>
-            <Separator />
-        </div>
     );
 }

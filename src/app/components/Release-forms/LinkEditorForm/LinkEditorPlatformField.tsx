@@ -1,7 +1,7 @@
 import { Platform } from "@/types/releaseTypes";
 import { openInANewTab } from "@/hooks/openInANewTab";
 import CustomSwitch from "../../Shared/CustomSwitch";
-import { Icon } from '@iconify/react';
+import ActionButton from "./ActionButton";
 import { MouseEventHandler } from "react";
 import Image from "next/image";
 import './LinkEditorPlatformField.scss';
@@ -111,19 +111,3 @@ export default function LinkEditorPlatformField({platformsWithUrl, platform, new
         </>
     )
 };
-
-// local component for action button
-interface ActionButtonProps {
-    name: string;
-    icon: string;
-    onClick: MouseEventHandler<HTMLDivElement>;
-}
-
-function ActionButton({ name, icon, onClick }: ActionButtonProps) {
-    return (
-        <div className="action-button" onClick={onClick}>
-            <Icon icon={icon} className="icon"/>
-            <p>{name}</p>
-        </div>
-    )
-}

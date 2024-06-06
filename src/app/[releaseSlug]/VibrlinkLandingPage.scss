@@ -1,0 +1,17 @@
+.landing-page {
+    width: 100vw;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    .content {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background: rgba(black, .4);
+        backdrop-filter: blur(1rem);
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+}

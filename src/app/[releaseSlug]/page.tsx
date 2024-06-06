@@ -1,43 +1,32 @@
-"use client"
-
-import { useState, useEffect } from "react";
+import { Metadata } from 'next';
 import { Release } from "@/types/releaseTypes";
-import { useParams } from "next/navigation";
 import { fetchReleaseDataBySlug } from "@/services/releasesApi";
-//import VibrlinkCard from "../components/cards/vibrlink-card/VibrlinkCard";
-//import './VibrlinkLandingPage.scss';
+import './VibrlinkLandingPage.scss';
 
-export default function VibrlinkLandingPage() {
+interface VibrlinkPageProps {
+    params: { releaseSlug: string };
+}
 
-    // !!! this component fetch the release datas whithout userId attachment to be publicly available 
-    
-    const {releaseSlug} = useParams();
-    const [selectedRelease, setSelectedRelease] = useState<Release | null>(null);
+export async function generateMetadata({ params }: VibrlinkPageProps): Promise<Metadata> {
+    const selectedRelease: Release | null = await fetchReleaseDataBySlug(params.releaseSlug);
+    return {
+        title: `${selectedRelease?.artist} | ${selectedRelease?.title}`,
+        // Ajoutez d'autres balises meta dynamiques ici
+    };
+}
 
-    useEffect(() => {
+export default async function VibrlinkLandingPage({ params }: VibrlinkPageProps) {
 
-        if(releaseSlug) {
-            const fetchData = async () => {
-                try {
-                    const releaseData = await fetchReleaseDataBySlug(String(releaseSlug));
-                    setSelectedRelease(releaseData);
-                } catch (error) {
-                    console.error('Error fetching release data:', error);
-                }
-            };
-    
-            fetchData();
-        }
-    }, [releaseSlug]);
+    const selectedRelease: Release | null = await fetchReleaseDataBySlug(params.releaseSlug);
 
     return (
-        <div data-testid="landing-page" className="landing-page" style={{ backgroundImage: `url(${selectedRelease?.cover})`, backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition:'center' }}>
+        <div className="landing-page" style={{ backgroundImage: `url(${selectedRelease?.cover})`, backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}>
             {selectedRelease && (
                 <div className="content">
                     <h1>{selectedRelease.title}</h1>
                     {/* <VibrlinkCard selectedRelease={selectedRelease} /> */}
                 </div>
-            )}  
+            )}
         </div>
-    )
+    );
 };

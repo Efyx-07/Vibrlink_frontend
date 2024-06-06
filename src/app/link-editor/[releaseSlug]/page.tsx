@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Release } from "@/types/releaseTypes";
 import { useReleaseStore, useUserStore } from "@/stores";
 import DashboardReleaseCard from "@/app/components/Cards/DashboardReleaseCard";
-//import LinkEditorForm from "../components/release-forms/link-editor/LinkEditorForm";
+import LinkEditorForm from "@/app/components/Release-forms/LinkEditorForm";
 import LoadingSpinner from "@/app/components/Shared/LoadingSpinner";
 import PageTitle from "@/app/components/Shared/PageTitle";
 import '../../../assets/sass/pages-common-styles.scss';
@@ -40,7 +40,7 @@ export default function LinkEditorPage() {
                                 <PageTitle mainPart="Edit" secondaryPart="your links"/>
                                 <div className="linkEditor-wrapper">
                                     <DashboardReleaseCard release={selectedRelease} />
-                                    {/* <LinkEditorForm selectedRelease={selectedRelease} /> */}
+                                    <LinkEditorForm selectedRelease={selectedRelease} />
                                 </div>
                             </>
                         ) 

@@ -1,0 +1,36 @@
+@import '../../../../assets/sass/colors.scss';
+@import '../../../../assets/sass/breakpoints.scss';
+
+.linkEditor-form {
+    width: 100%;
+    max-width: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .section-name {
+        width: 100%;
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+
+        p {
+            white-space: nowrap;
+            font-size: 1.25rem;
+        }
+    }
+
+    .generated-links, .manual-links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+@media (min-width: $breakpointLargeTablet) {
+
+    .linkEditor-form {
+        gap: 4rem;
+    }
+}

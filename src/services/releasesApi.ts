@@ -1,4 +1,5 @@
 import type { Release, Platform } from "../types/releaseTypes";
+import { unstable_noStore as noStore } from 'next/cache';
 
 const hostName: string | undefined = process.env.NEXT_PUBLIC_BACKEND_URL;
 
@@ -40,6 +41,9 @@ export async function fetchReleasesData(userId: number): Promise<Release[]> {
 
 // fetch the release of one data by its slug
 export async function fetchReleaseDataBySlug(releaseSlug: string): Promise<Release> {
+    
+    noStore();
+
     try {
 
         const response = await fetch(`${hostName}/releasesRoute/release/${releaseSlug}`);

@@ -17,22 +17,16 @@ export default function LinkEditorForm({selectedRelease}: SelectedReleaseProps) 
 
     // get all the platforms of the release
     const platforms: Platform[] = selectedRelease.platforms;
-
     // state for error message
     const [errorMessage, setErrorMessage] = useState<boolean>(false);
-
     // state for isLoading
     const [isLoading, setIsLoading] = useState<boolean>(false);
-
     // filter the platforms to get the ones with url
     const [platformsWithUrl, setPlatformsWithUrl] = useState<Platform[]>(platforms.filter(platform => platform.url));
-
     // filter the platforms to get the ones without url
     const [platformsWithoutUrl, setPlatformsWithoutUrl] = useState<Platform[]>(platforms.filter(platform => !platform.url));
-
     // state for the newUrls
     const [newUrls, setNewUrls] = useState<{[key: number]: string}>({});
-
     // state to track if an update needs to be submitted
     const [shouldSubmitUpdate, setShouldSubmitUpdate] = useState<boolean>(false);
 
@@ -188,7 +182,8 @@ export default function LinkEditorForm({selectedRelease}: SelectedReleaseProps) 
                         onAddButtonClick={() => {}}
                     />
                 ))}
-            </div>   
+            </div> 
+              
             {platformsWithoutUrl.length > 0 && (
                 <div className="manual-links">
                     <SectionTitle name="Enter more links manually"/>

@@ -41,7 +41,7 @@ export default function Navigation({onItemClick}: NavigationProps) {
     ];
 
     const loggedInNavItems: NavItemProps[] = [
-        { name: 'New vibrlink', navTo: '/new-vibrlink' },
+        { name: 'New vibrlink', navTo: '/new-link' },
         { name: 'My vibrlinks', navTo: '/my-links' }
     ];
 

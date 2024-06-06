@@ -8,7 +8,7 @@ import FormPageMessage from "../components/Shared/FormPageMessage";
 import StyledSeparator from "../components/Shared/StyledSeparator";
 import '../../assets/sass/pages-common-styles.scss';
 import '../../assets/sass/messageAndFormContainer.scss';
-import './LoginPage.scss';
+import '../../assets/sass/form-container.scss';
 
 export default function LoginPage() {
 

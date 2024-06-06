@@ -26,7 +26,7 @@ export default function Hero() {
             <div className="buttons-container">
                 {isLogged ? 
                     (
-                        <FormButton type="button" name="Create a new vibrLink" onClick={() => router.push('/new-vibrlink')} id="hero-button"/>
+                        <FormButton type="button" name="Create a new vibrLink" onClick={() => router.push('/new-link')} id="hero-button"/>
                     )
                     :
                     (

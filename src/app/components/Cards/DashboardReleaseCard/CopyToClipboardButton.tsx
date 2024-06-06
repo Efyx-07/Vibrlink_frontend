@@ -12,7 +12,7 @@ export default function CopyToClipboardButton ({ release }: CopyToClipboardButto
 
     // get the frontend address and form the landing-page link
     const {frontendAddress} = useGlobalDataStore();
-    const landingPageLink: string = `${frontendAddress}v/${release.slug}`;
+    const landingPageLink: string = `${frontendAddress}/${release.slug}`;
 
     const [copied, setCopied] = useState<boolean>(false);
 

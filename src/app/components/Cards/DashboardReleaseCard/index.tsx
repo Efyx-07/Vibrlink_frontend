@@ -25,7 +25,7 @@ export default function DashboardReleaseCard({ release }: DashboardReleaseCardPr
     const { openRemoveReleaseModal } = useModalStore();
 
     const navToReleaseLandingPage = (releaseSlug: string): void => {
-        openInANewTab(`/v/${releaseSlug}`);
+        openInANewTab(`/${releaseSlug}`);
     };
 
     // remove the buttons display from the component when in LinkEditorPage 

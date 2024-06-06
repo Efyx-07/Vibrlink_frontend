@@ -47,8 +47,7 @@ export default function DashboardReleaseCard({ release }: DashboardReleaseCardPr
                         width={500}
                         height={500}
                         alt={release.title}
-                        layout="responsive"
-                        objectFit="cover"
+                        priority
                     />
                 </div>
                 <div className="infos-container">

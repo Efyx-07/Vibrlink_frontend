@@ -11,7 +11,6 @@ import FormButton from "../components/Shared/FormButton";
 import '../../assets/sass/pages-common-styles.scss';
 import './MyLinksPage.scss';
 
-
 // function to create an new array for reversed releases
 const reverseReleases = (releases: readonly Release[]) => {
     return [...releases].reverse();

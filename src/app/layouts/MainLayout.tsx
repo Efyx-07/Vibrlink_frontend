@@ -2,12 +2,20 @@
 
 import useAppInitializer from "@/hooks/AppInitializer";
 import LoadingSpinner from "../components/Shared/LoadingSpinner";
+import dynamic from "next/dynamic";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import SignoutModal from "../components/Modals/SignoutModal";
-import DeleteAccountModal from "../components/Modals/DeleteAccountModal";
-import RemoveReleaseModal from "../components/Modals/RemoveReleaseModal";
 import './MainLayout.scss';
+
+const DynSignoutModal = dynamic(() => import('../components/Modals/SignoutModal'), {
+  loading: () => <LoadingSpinner />
+});
+const DynDeleteAccountModal = dynamic(() => import('../components/Modals/DeleteAccountModal'), {
+  loading: () => <LoadingSpinner />
+});
+const DynRemoveReleaseModal = dynamic(() => import('../components/Modals/RemoveReleaseModal'), {
+  loading: () => <LoadingSpinner />
+});
 
 export default function MainLayout({
   children,
@@ -23,15 +31,15 @@ export default function MainLayout({
         (
           <div className="page-spinner"><LoadingSpinner /></div>
         )
-        :
+      :
         (
           <>
             <Header/>
             <main>{children}</main>
             <Footer/>
-            <SignoutModal />
-            <DeleteAccountModal />
-            <RemoveReleaseModal />
+            <DynSignoutModal/>
+            <DynDeleteAccountModal />
+            <DynRemoveReleaseModal />
           </>
         )
       }

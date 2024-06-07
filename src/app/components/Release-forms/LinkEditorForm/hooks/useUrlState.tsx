@@ -70,4 +70,4 @@ export default function useUrlState(platforms: Platform[]) {
         selectedPlatform,
         handlePlatformChange,
     };
-}
+};

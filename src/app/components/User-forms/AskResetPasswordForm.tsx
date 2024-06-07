@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import { sendResetLink } from "@/services/authService";
 import UserFormField from "./UserFormField";
 import LoadingSpinner from "../Shared/LoadingSpinner";
@@ -13,7 +13,7 @@ export default function AskResetPasswordForm() {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [successMessage, setSuccessMessage] = useState<boolean>(false);
 
-    const askResetLink = async(e: React.FormEvent<HTMLFormElement>): Promise <void> => {
+    const askResetLink = async(e: FormEvent<HTMLFormElement>): Promise <void> => {
         e.preventDefault();
         setIsLoading(true);
 

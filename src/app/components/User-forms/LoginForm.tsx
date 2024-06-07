@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { useUserStore } from "@/stores";
 import { validateData } from "@/hooks/validateData";
@@ -17,7 +17,7 @@ export default function LoginForm() {
     const userStore = useUserStore();
     const router = useRouter();
 
-    const userLogin = async(e: React.FormEvent<HTMLFormElement>): Promise <void> => {
+    const userLogin = async(e: FormEvent<HTMLFormElement>): Promise <void> => {
         e.preventDefault();
         setIsLoading(true);
 

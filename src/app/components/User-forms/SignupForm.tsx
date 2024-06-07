@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import { validateEmail, validatePassword, validateData, validateConfirmPassword } from "../../../hooks/validateData";
 import { useRouter } from "next/navigation";
 import { register } from "@/services/authService";
@@ -29,7 +29,7 @@ export default function SignupForm() {
     }, [email, password, confirmPassword]);
 
 
-    const signup = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    const signup = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
         setIsLoading(true);
 

@@ -24,10 +24,11 @@ export default function useUrlState(platforms: Platform[]) {
 
     useEffect(() => {
         if (platformIdsToAdd.length > 0) {
-            const updatedPlatformsWithoutUrl = platformsWithoutUrl.filter(platform => !platformIdsToAdd.includes(platform.id));
-            setPlatformsWithoutUrl(updatedPlatformsWithoutUrl);
+            setPlatformsWithoutUrl(prevPlatformsWithoutUrl =>
+                prevPlatformsWithoutUrl.filter(platform => !platformIdsToAdd.includes(platform.id))
+            );
         }
-    }, [platformIdsToAdd, platformsWithoutUrl]);
+    }, [platformIdsToAdd]);
 
     const handleUrlChange = (platformId: number, url: string) => {
         setNewUrls(prevUrls => ({ ...prevUrls, [platformId]: url }));

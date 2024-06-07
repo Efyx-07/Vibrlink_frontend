@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Platform } from "@/types/releaseTypes";
 
 export default function useUrlState(platforms: Platform[]) {
@@ -7,9 +7,10 @@ export default function useUrlState(platforms: Platform[]) {
     const [newUrls, setNewUrls] = useState<{ [key: number]: string }>({});
     const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(null);
     const [platformIdsToAdd, setPlatformIdsToAdd] = useState<number[]>([]);
+    const isInitialized = useRef(false);
 
     useEffect(() => {
-        if (Object.keys(newUrls).length === 0) {
+        if (!isInitialized.current) {
             const initialUrls: { [key: number]: string } = {};
             platforms.forEach(platform => {
                 if (platform.url) {
@@ -17,8 +18,9 @@ export default function useUrlState(platforms: Platform[]) {
                 }
             });
             setNewUrls(initialUrls);
+            isInitialized.current = true;
         }
-    }, [platforms, newUrls]);
+    }, [platforms]);
 
     useEffect(() => {
         if (platformIdsToAdd.length > 0) {

@@ -1,12 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Platform } from "@/types/releaseTypes";
 
 export default function useVisibilityState(platforms: Platform[]) {
     const [platformsVisibility, setPlatformsVisibility] = useState<{ [key: number]: boolean }>({});
     const [shouldSubmitUpdate, setShouldSubmitUpdate] = useState<boolean>(false);
+    const isInitialized = useRef(false);
 
     useEffect(() => {
-        if (Object.keys(platformsVisibility).length === 0) {
+        if (!isInitialized.current) {
             const initialPlatformsVisibility: { [key: number]: boolean } = {};
             platforms.forEach(platform => {
                 if (platform.visibility) {
@@ -14,8 +15,9 @@ export default function useVisibilityState(platforms: Platform[]) {
                 }
             });
             setPlatformsVisibility(initialPlatformsVisibility);
+            isInitialized.current = true;
         }
-    }, [platforms, platformsVisibility]);
+    }, [platforms]);
 
     const handleVisibilityChange = (platformId: number, checked: boolean) => {
         setPlatformsVisibility(prevVisibilityStatus => ({ ...prevVisibilityStatus, [platformId]: checked }));

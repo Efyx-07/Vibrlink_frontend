@@ -9,14 +9,16 @@ export default function useUrlState(platforms: Platform[]) {
     const [platformIdsToAdd, setPlatformIdsToAdd] = useState<number[]>([]);
 
     useEffect(() => {
-        const initialUrls: { [key: number]: string } = {};
-        platforms.forEach(platform => {
-            if (platform.url) {
-                initialUrls[platform.id] = platform.url;
-            }
-        });
-        setNewUrls(initialUrls);
-    }, [platforms]);
+        if (Object.keys(newUrls).length === 0) {
+            const initialUrls: { [key: number]: string } = {};
+            platforms.forEach(platform => {
+                if (platform.url) {
+                    initialUrls[platform.id] = platform.url;
+                }
+            });
+            setNewUrls(initialUrls);
+        }
+    }, [platforms, newUrls]);
 
     useEffect(() => {
         if (platformIdsToAdd.length > 0) {

@@ -6,14 +6,16 @@ export default function useVisibilityState(platforms: Platform[]) {
     const [shouldSubmitUpdate, setShouldSubmitUpdate] = useState<boolean>(false);
 
     useEffect(() => {
-        const initialPlatformsVisibility: { [key: number]: boolean } = {};
-        platforms.forEach(platform => {
-            if (platform.visibility) {
-                initialPlatformsVisibility[platform.id] = platform.visibility;
-            }
-        });
-        setPlatformsVisibility(initialPlatformsVisibility);
-    }, [platforms]);
+        if (Object.keys(platformsVisibility).length === 0) {
+            const initialPlatformsVisibility: { [key: number]: boolean } = {};
+            platforms.forEach(platform => {
+                if (platform.visibility) {
+                    initialPlatformsVisibility[platform.id] = platform.visibility;
+                }
+            });
+            setPlatformsVisibility(initialPlatformsVisibility);
+        }
+    }, [platforms, platformsVisibility]);
 
     const handleVisibilityChange = (platformId: number, checked: boolean) => {
         setPlatformsVisibility(prevVisibilityStatus => ({ ...prevVisibilityStatus, [platformId]: checked }));

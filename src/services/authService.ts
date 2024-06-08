@@ -117,7 +117,7 @@ export async function sendResetLink(email: string) {
 };
 
 // backend query to reset a user password 
-export async function resetPassword(token:string, newPassword: string): Promise <void> {
+export async function resetPassword(token:string | string[], newPassword: string): Promise <void> {
 
     try {
 

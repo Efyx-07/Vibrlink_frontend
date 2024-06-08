@@ -21,9 +21,11 @@
             display: inline-block;
             max-width: 16rem;
     
-            img {
+            .img {
                 display: block;
                 width: 100%;
+                height: auto;
+                object-fit: cover;
             }
         }
 

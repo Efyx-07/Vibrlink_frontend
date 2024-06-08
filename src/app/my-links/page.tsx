@@ -5,6 +5,7 @@ import { Release } from "@/types/releaseTypes";
 import { useEffect } from "react";
 import { useUserStore, useReleaseStore } from "@/stores";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import DashboardReleaseCard from "../components/Cards/DashboardReleaseCard";
 import PageTitle from "../components/Shared/PageTitle";
 import FormButton from "../components/Shared/FormButton";
@@ -22,8 +23,6 @@ export default function MyLinksPage() {
     const user = useUserStore(state => state.user);
     const releases = useReleaseStore(state => state.releases);
     const loadReleasesData = useReleaseStore(state => state.loadReleasesData);
-
-    const router = useRouter();
 
     // useEffect to display the updates
     useEffect(() => {
@@ -51,18 +50,8 @@ export default function MyLinksPage() {
                                     </div>
                                 </>
                             )
-                            :
-                            (
-                                <>
-                                    <div className="empty-list-container">
-                                        <div className="image-container">
-                                            {/* <img src="/decoration/empty-list.svg" /> */}
-                                        </div>
-                                        <p>You have no vibrlink yet !</p>
-                                        <FormButton type="button" name="Create a vibrlink" onClick={() => router.push('/new-vibrlink')} id="empty-button"/>
-                                    </div>
-                                </>
-                            )
+                        :
+                            (<><EmptyList /></>)
                         }
                     </div>
                 </div>
@@ -70,3 +59,26 @@ export default function MyLinksPage() {
         </>
     )
 };
+
+// local component to display when list is empty
+function EmptyList() {
+
+    const router = useRouter();
+
+    return (
+        <div className="empty-list-container">
+            <div className="image-container">
+                <Image 
+                    className="img"
+                    src="/decoration/empty-list.svg"
+                    width={500}
+                    height={500}
+                    alt="empty list"
+                    priority
+                />
+            </div>
+            <p>You have no vibrlink yet !</p>
+            <FormButton type="button" name="Create a vibrlink" onClick={() => router.push('/new-link')} id="empty-button"/>
+        </div>
+    )
+}

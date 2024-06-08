@@ -1,3 +1,5 @@
+"use client"
+
 import MainLayout from "@/app/layouts/MainLayout"
 import ResetPasswordForm from "@/app/components/User-forms/ResetPasswordForm";
 import '../../../assets/sass/pages-common-styles.scss';

@@ -7,6 +7,7 @@ export default function useUrlState(platforms: Platform[]) {
     const [newUrls, setNewUrls] = useState<{ [key: number]: string }>({});
     const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(null);
     const [platformIdsToAdd, setPlatformIdsToAdd] = useState<number[]>([]);
+    const [shouldUpdateAfterPlatformAdding, setShouldUpdateAfterPlatformAdding] = useState<boolean>(false);
     const isInitialized = useRef(false);
 
     useEffect(() => {
@@ -52,6 +53,7 @@ export default function useUrlState(platforms: Platform[]) {
                 selectElement.selectedIndex = 0;
             }
         }
+        setShouldUpdateAfterPlatformAdding(true);
     };
 
     const handlePlatformChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -70,5 +72,7 @@ export default function useUrlState(platforms: Platform[]) {
         addToPlatformsWithUrl,
         selectedPlatform,
         handlePlatformChange,
+        shouldUpdateAfterPlatformAdding,
+        setShouldUpdateAfterPlatformAdding,
     };
 };

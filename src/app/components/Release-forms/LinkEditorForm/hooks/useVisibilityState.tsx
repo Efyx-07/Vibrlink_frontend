@@ -3,7 +3,7 @@ import { Platform } from "@/types/releaseTypes";
 
 export default function useVisibilityState(platforms: Platform[]) {
     const [platformsVisibility, setPlatformsVisibility] = useState<{ [key: number]: boolean }>({});
-    const [shouldSubmitUpdate, setShouldSubmitUpdate] = useState<boolean>(false);
+    const [shouldUpdateAfterVisibilityChange, setShouldUpdateAfterVisibilityChange] = useState<boolean>(false);
     const isInitialized = useRef(false);
 
     useEffect(() => {
@@ -21,13 +21,13 @@ export default function useVisibilityState(platforms: Platform[]) {
 
     const handleVisibilityChange = (platformId: number, checked: boolean) => {
         setPlatformsVisibility(prevVisibilityStatus => ({ ...prevVisibilityStatus, [platformId]: checked }));
-        setShouldSubmitUpdate(true);
+        setShouldUpdateAfterVisibilityChange(true);
     };
 
     return {
         platformsVisibility,
         handleVisibilityChange,
-        shouldSubmitUpdate,
-        setShouldSubmitUpdate,
+        shouldUpdateAfterVisibilityChange,
+        setShouldUpdateAfterVisibilityChange,
     };
-}
+};

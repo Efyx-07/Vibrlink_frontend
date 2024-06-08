@@ -27,13 +27,15 @@ export default function LinkEditorForm({ selectedRelease }: SelectedReleaseProps
         addToPlatformsWithUrl,
         selectedPlatform,
         handlePlatformChange,
+        shouldUpdateAfterPlatformAdding,
+        setShouldUpdateAfterPlatformAdding
     } = useUrlState(platforms);
 
     const {
         platformsVisibility,
         handleVisibilityChange,
-        shouldSubmitUpdate,
-        setShouldSubmitUpdate
+        shouldUpdateAfterVisibilityChange,
+        setShouldUpdateAfterVisibilityChange,
     } = useVisibilityState(platforms);
 
     const submitReleaseUpdate = useCallback(async (): Promise<void> => {
@@ -55,11 +57,18 @@ export default function LinkEditorForm({ selectedRelease }: SelectedReleaseProps
     }, [newUrls, platformsVisibility, selectedRelease.id]);
 
     useEffect(() => {
-        if (shouldSubmitUpdate) {
+        if (shouldUpdateAfterVisibilityChange) {
             submitReleaseUpdate();
-            setShouldSubmitUpdate(false);
+            setShouldUpdateAfterVisibilityChange(false);
         }
-    }, [shouldSubmitUpdate, submitReleaseUpdate, setShouldSubmitUpdate]);
+    }, [shouldUpdateAfterVisibilityChange, submitReleaseUpdate, setShouldUpdateAfterVisibilityChange]);
+
+    useEffect(() => {
+        if (shouldUpdateAfterPlatformAdding) {
+            submitReleaseUpdate();
+            setShouldUpdateAfterPlatformAdding(false);
+        }
+    }, [shouldUpdateAfterPlatformAdding, submitReleaseUpdate, setShouldUpdateAfterPlatformAdding]);
 
     return (
         <form className="linkEditor-form" onSubmit={(e) => { e.preventDefault(); submitReleaseUpdate(); }}>

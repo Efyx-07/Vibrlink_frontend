@@ -18,11 +18,17 @@ const useUserStore = create<State>((set, get) => ({
     isLoggedIn: false,
     setToken: (newToken) => {
         set({ token: newToken, isLoggedIn: !!newToken });
+        if (newToken) {
+            document.cookie = `isLoggedIn=true; path=/; max-age=${60 * 60 * 24 * 7}`;
+        } else {
+            document.cookie = 'isLoggedIn=; path=/; max-age=0';
+        }
         localStorage.setItem('token', newToken ?? '');
     },
     logOutUser: () => {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
+        document.cookie = 'isLoggedIn=; path=/; max-age=0';
         set({ user: null, token: null, isLoggedIn: false});
     },
     saveUserDataInLocalStorage: () => {

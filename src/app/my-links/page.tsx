@@ -1,6 +1,7 @@
 "use client"
 
 import MainLayout from "../layouts/MainLayout";
+import useRedirectIfLoggedOut from "@/hooks/useRedirectIfLoggedOut";
 import { Release } from "@/types/releaseTypes";
 import { useEffect } from "react";
 import { useUserStore, useReleaseStore } from "@/stores";
@@ -18,6 +19,8 @@ const reverseReleases = (releases: readonly Release[]) => {
 };
 
 export default function MyLinksPage() {
+
+    useRedirectIfLoggedOut();
 
     // get user and releases data from the stores
     const user = useUserStore(state => state.user);

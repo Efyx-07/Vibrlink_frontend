@@ -1,6 +1,7 @@
 "use client"
 
 import MainLayout from "../layouts/MainLayout";
+import useRedirectIfLoggedOut from "@/hooks/useRedirectIfLoggedOut";
 import FormPageMessage from "../components/Shared/FormPageMessage";
 import StyledSeparator from "../components/Shared/StyledSeparator";
 import UpdatePasswordForm from "../components/User-forms/UpdatePasswordForm";
@@ -9,6 +10,8 @@ import '../../assets/sass/messageAndFormContainer.scss';
 import '../../assets/sass/form-container.scss';
 
 export default function AccountSettingsPage() {
+
+    useRedirectIfLoggedOut();
 
     const mainTextPrimary: string = 'Security';
     const mainTextSecondary: string = ' first';

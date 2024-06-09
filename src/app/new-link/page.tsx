@@ -1,4 +1,7 @@
+"use client"
+
 import MainLayout from "../layouts/MainLayout";
+import useRedirectIfLoggedOut from "@/hooks/useRedirectIfLoggedOut";
 import NewLinkForm from "../components/Release-forms/NewLinkForm";
 import FormPageMessage from "../components/Shared/FormPageMessage";
 import StyledSeparator from "../components/Shared/StyledSeparator";
@@ -7,6 +10,8 @@ import '../../assets/sass/messageAndFormContainer.scss';
 import '../../assets/sass/form-container.scss';
 
 export default function NewLinkPage() {
+
+    useRedirectIfLoggedOut();
 
     const mainTextPrimary: string = 'Start';
     const mainTextSecondary: string = ' by entering your release Spotify link';

@@ -1,7 +1,7 @@
 "use client"
 
 import MainLayout from "@/app/layouts/MainLayout";
-
+import useRedirectIfLoggedOut from "@/hooks/useRedirectIfLoggedOut";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Release } from "@/types/releaseTypes";
@@ -14,6 +14,8 @@ import '../../../assets/sass/pages-common-styles.scss';
 import './LinkEditorPage.scss';
 
 export default function LinkEditorPage() {
+
+    useRedirectIfLoggedOut();
 
     const { releaseSlug } = useParams();
     const [selectedRelease, setSelectedRelease] = useState<Release | null>(null);

@@ -10,10 +10,21 @@ interface VibrlinkPageProps {
 
 export async function generateMetadata({ params }: VibrlinkPageProps): Promise<Metadata> {
     const selectedRelease: Release | null = await fetchReleaseDataBySlug(params.releaseSlug);
+
     return {
         title: `${selectedRelease?.artist} | ${selectedRelease?.title}`,
+        description: `Listen to ${selectedRelease?.title} by ${selectedRelease?.artist}`,
+        alternates: {
+            canonical: `${process.env.NEXT_PUBLIC_FRONTEND_URL}${selectedRelease?.slug}`,
+        },
+        openGraph: {
+            title: `${selectedRelease?.artist} | ${selectedRelease?.title}`,
+            description: `Listen to ${selectedRelease?.title} by ${selectedRelease?.artist}`,
+            url: `${process.env.NEXT_PUBLIC_FRONTEND_URL}${selectedRelease?.slug}`,
+            images: [`${selectedRelease?.cover}`]
+        }
     };
-}
+};
 
 export default async function VibrlinkLandingPage({ params }: VibrlinkPageProps) {
 

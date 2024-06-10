@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import './MainLayout.scss';
 
+// get the modals dynamically with dynamic
 const DynSignoutModal = dynamic(() => import('../components/Modals/SignoutModal'), {
   loading: () => <LoadingSpinner />
 });

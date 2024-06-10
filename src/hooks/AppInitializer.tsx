@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 import isTokenExpired from './VerifyUserTokenExpiry';
 import { useRouter } from 'next/navigation';
 
-// hook to initialize the app
+// hook to initialize app with neede datas. Used in => MainLayout.
 export default function useAppInitializer() {
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -22,7 +22,6 @@ function useAppInitialization(): boolean {
 
     const userStoreRef = useRef(useUserStore());
     const releaseStoreRef = useRef(useReleaseStore());
-    // state to manage the render if the user is logged or not
     const [loading, setLoading] = useState<boolean>(true);
 
     // get the datas before app initialisation

@@ -10,6 +10,7 @@ interface State {
     saveUserDataInLocalStorage: () => void;
     setUserData: (user: User) => void;
     loadUserDataFromLocalStorage: () => Promise<void>;
+    checkLoggedInStatus: () => boolean;
 };
 
 const useUserStore = create<State>((set, get) => ({
@@ -40,6 +41,10 @@ const useUserStore = create<State>((set, get) => ({
         } else {
             set({ user: null, token: null, isLoggedIn: false });
         }
+    },
+    checkLoggedInStatus: () => {
+        const token = localStorage.getItem('token');
+        return !!token;
     },
 }));
 

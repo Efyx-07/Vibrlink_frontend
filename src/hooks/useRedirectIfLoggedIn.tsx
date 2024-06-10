@@ -12,7 +12,7 @@ export default function useRedirectIfLoggedIn() {
         setIsLoggedInChecked(true); 
 
         if (isLoggedIn) {
-            router.push('/');
+            router.push('/my-links');
         }
     }, [userStore, router]);
 

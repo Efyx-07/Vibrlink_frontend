@@ -1,6 +1,7 @@
 "use client"
 
 import MainLayout from "../layouts/MainLayout";
+import useRedirectIfLoggedIn from "@/hooks/useRedirectIfLoggedIn";
 import { useState } from "react";
 import LoginForm from "../components/User-forms/LoginForm";
 import AskResetPasswordForm from "../components/User-forms/AskResetPasswordForm";
@@ -11,6 +12,8 @@ import '../../assets/sass/messageAndFormContainer.scss';
 import '../../assets/sass/form-container.scss';
 
 export default function LoginPage() {
+
+    useRedirectIfLoggedIn();
 
     const [isLoginFormVisible, setIsLoginFormVisible] = useState(true);
 

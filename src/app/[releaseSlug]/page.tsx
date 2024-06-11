@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { Release } from "@/types/releaseTypes";
 import { fetchReleaseDataBySlug } from "@/services/releasesApi";
 import VibrlinkCard from '../components/Cards/VibrlinkCard';
+import VLCardDesktop from '../components/Cards/VLCardDesktop';
 import './VibrlinkLandingPage.scss';
 
 interface VibrlinkPageProps {
@@ -34,7 +35,12 @@ export default async function VibrlinkLandingPage({ params }: VibrlinkPageProps)
         <div className="landing-page" style={{ backgroundImage: `url(${selectedRelease?.cover})`, backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}>
             {selectedRelease && (
                 <div className="content">
-                    <VibrlinkCard selectedRelease={selectedRelease} />
+                    <div className="mobile-card">
+                        <VibrlinkCard selectedRelease={selectedRelease} />
+                    </div>
+                    <div className="desktop-card">
+                        <VLCardDesktop selectedRelease={selectedRelease} />
+                    </div>
                 </div>
             )}
         </div>

@@ -1,3 +1,5 @@
+@import '../../assets/sass/breakpoints.scss';
+
 .landing-page {
     width: 100vw;
     height: 100dvh;
@@ -13,5 +15,25 @@
         backdrop-filter: blur(1rem);
         box-sizing: border-box;
         overflow-y: auto;
+
+        .desktop-card {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: $breakpointDesktop) {
+
+    .landing-page
+    .content {
+
+        .desktop-card {
+            display: inline;
+            width: 100%;
+        }
+
+        .mobile-card {
+            display: none;
+        }
     }
 }

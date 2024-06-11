@@ -12,12 +12,12 @@
     .cover-player-container {
         position: fixed;
         width: 33%;
+        max-width: 35rem;
         top: 50%;
         transform: translateY(-50%);
         margin-left: 8rem;
         display: flex;
         align-items: center;
-        overflow-y: scroll;
     }
 
     .title-and-links-container {

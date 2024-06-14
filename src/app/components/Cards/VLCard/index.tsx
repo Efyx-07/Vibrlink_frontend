@@ -5,14 +5,14 @@ import VCardCoverPlayer from "./VCardCoverPlayer";
 import ReleaseInfos from "./ReleaseInfos";
 import ReleaseLinks from "./ReleaseLinks";
 import Watermark from "./Watermark";
-import './VibrlinkCard.scss';
+import './VLCard.scss';
 
 interface SelectedReleaseProps {
     selectedRelease: Release;
 };
 
 // global component for the vibrlink card
-export default function VibrlinkCard({selectedRelease}: SelectedReleaseProps) {
+export default function VLCard({selectedRelease}: SelectedReleaseProps) {
 
     return (
         <>

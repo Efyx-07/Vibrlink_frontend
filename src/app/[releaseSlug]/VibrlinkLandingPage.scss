@@ -15,25 +15,5 @@
         backdrop-filter: blur(1rem);
         box-sizing: border-box;
         overflow-y: auto;
-
-        .desktop-card {
-            display: none;
-        }
-    }
-}
-
-@media (min-width: $breakpointInterDesktop) {
-
-    .landing-page
-    .content {
-
-        .desktop-card {
-            display: inline;
-            width: 100%;
-        }
-
-        .mobile-card {
-            display: none;
-        }
     }
 }

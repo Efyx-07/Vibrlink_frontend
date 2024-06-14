@@ -3,7 +3,7 @@
 import MainLayout from "@/app/layouts/MainLayout";
 import useRedirectIfLoggedOut from "@/hooks/useRedirectIfLoggedOut";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Release } from "@/types/releaseTypes";
 import { useReleaseStore, useUserStore } from "@/stores";
 import DashboardReleaseCard from "@/app/components/Cards/DashboardReleaseCard";
@@ -17,20 +17,23 @@ export default function LinkEditorPage() {
 
     useRedirectIfLoggedOut();
 
-    const { releaseSlug } = useParams();
+    // extract and decode the slug from the url (!!! IMPORTANT for the slugs with special chars: "," etc..)
+    const { releaseSlug: encodedReleaseSlug } = useParams();
+    const releaseSlug: string = decodeURIComponent(String(encodedReleaseSlug)); 
+
     const [selectedRelease, setSelectedRelease] = useState<Release | null>(null);
-    const releaseStore = useReleaseStore();
-    const userId = useUserStore().user?.id;
+    const releaseStoreRef = useRef(useReleaseStore());
+    const userIdRef = useRef(useUserStore().user?.id);
 
     // initialize the store to update the releases datas after each handling
     useEffect(() => {
         const initialize = async () => {
-            await releaseStore.initializeStore(Number(userId));
-            const release = await releaseStore.getReleaseBySlug(String(releaseSlug));
+            await releaseStoreRef.current.initializeStore(Number(userIdRef.current));
+            const release = await releaseStoreRef.current.getReleaseBySlug(String(releaseSlug));
             setSelectedRelease(release || null);
         };
         initialize();
-    }, [userId, releaseSlug, releaseStore]);
+    }, [releaseSlug]);
 
     return (
         <>

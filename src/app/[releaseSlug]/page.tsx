@@ -8,13 +8,13 @@ import './VibrlinkLandingPage.scss';
 
 import dynamic from 'next/dynamic';
 
-const DynVLCardMobile = dynamic(() => import('../components/Cards/VibrlinkCard'), {
+const DynVLCard = dynamic(() => import('../components/Cards/VibrlinkCard'), {
     loading: () => <LoadingSpinner />
 });
 
-const DynVLCardDesktop = dynamic(() => import('../components/Cards/VLCardDesktop'), {
-    loading: () => <LoadingSpinner />
-});
+// const DynVLCardDesktop = dynamic(() => import('../components/Cards/VLCardDesktop'), {
+//     loading: () => <LoadingSpinner />
+// });
 
 interface VibrlinkPageProps {
     params: { releaseSlug: string };
@@ -46,12 +46,13 @@ export default async function VibrlinkLandingPage({ params }: VibrlinkPageProps)
         <div className="landing-page" style={{ backgroundImage: `url(${selectedRelease?.cover})`, backgroundSize: 'cover', backgroundAttachment: 'fixed', backgroundPosition: 'center' }}>
             {selectedRelease && (
                 <div className="content">
-                    <div className="mobile-card">
+                    <DynVLCard selectedRelease={selectedRelease} />
+                    {/* <div className="mobile-card">
                         <DynVLCardMobile selectedRelease={selectedRelease} />
                     </div>
                     <div className="desktop-card">
                         <DynVLCardDesktop selectedRelease={selectedRelease} />
-                    </div>
+                    </div> */}
                 </div>
             )}
         </div>

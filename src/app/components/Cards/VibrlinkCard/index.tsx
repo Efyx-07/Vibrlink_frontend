@@ -15,11 +15,24 @@ interface SelectedReleaseProps {
 export default function VibrlinkCard({selectedRelease}: SelectedReleaseProps) {
 
     return (
-        <div className="vibrlink-card">
-            <VCardCoverPlayer selectedRelease={selectedRelease}/>
-            <ReleaseInfos selectedRelease={selectedRelease}/>
-            <ReleaseLinks selectedRelease={selectedRelease}/>
-            <Watermark />
-        </div>
+        <>
+            <div className="vl-card-mobile">
+                <VCardCoverPlayer selectedRelease={selectedRelease}/>
+                <ReleaseInfos selectedRelease={selectedRelease}/>
+                <ReleaseLinks selectedRelease={selectedRelease}/>
+                <Watermark />
+            </div>
+            
+            <div className="vl-card-desktop">
+                <div className="cover-player-container">
+                    <VCardCoverPlayer selectedRelease={selectedRelease}/>
+                </div>
+                <div className="title-and-links-container">
+                    <ReleaseInfos selectedRelease={selectedRelease}/>
+                    <ReleaseLinks selectedRelease={selectedRelease}/>
+                    <Watermark />
+                </div>
+            </div>
+        </>
     )
 };

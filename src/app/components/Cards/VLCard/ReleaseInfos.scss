@@ -1,4 +1,5 @@
 @import '../../../../assets/sass/colors.scss';
+@import '../../../../assets/sass/breakpoints.scss';
 
 .infos-container {
     width: 100%;
@@ -36,5 +37,29 @@
 
     .mention {
         font-size: .85rem;
+    }
+}
+
+@media (min-width: $breakpointInterDesktop) {
+
+    .infos-container {
+        text-align: unset;
+        position: unset;
+        background: unset;
+        color: unset;
+        padding: unset;
+        border-radius: unset;
+
+        .triangle {
+            display: none;
+        }
+
+        .title {
+            font-size: 2.5rem;
+        }
+
+        .mention {
+            display: none;
+        }
     }
 }

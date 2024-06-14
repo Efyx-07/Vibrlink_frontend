@@ -1,10 +1,10 @@
 "use client"
 
 import { Release } from "@/types/releaseTypes";
-import VCardCoverPlayer from "../VLCard/VCardCoverPlayer";
-import ReleaseInfos from "../VLCard/ReleaseInfos";
-import ReleaseLinks from "../VLCard/ReleaseLinks";
-import Watermark from "../VLCard/Watermark";
+import VCardCoverPlayer from "./VCardCoverPlayer";
+import ReleaseInfos from "./ReleaseInfos";
+import ReleaseLinks from "./ReleaseLinks";
+import Watermark from "./Watermark";
 import './VibrlinkCard.scss';
 
 interface SelectedReleaseProps {

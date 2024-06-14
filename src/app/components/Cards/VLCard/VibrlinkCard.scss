@@ -22,11 +22,12 @@
     .vl-card-desktop {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 4rem;
         position: relative;
         height: 100dvh;
         width: 100%;
         overflow-y: scroll;
-        padding: 4rem 10rem;
+        padding: 4rem;
 
         .cover-player-container {
             position: fixed;
@@ -34,13 +35,14 @@
             max-width: 35rem;
             top: 50%;
             transform: translateY(-50%);
-            margin-left: 8rem;
+            margin-left: 10rem;
             display: flex;
             align-items: center;
         }
 
         .title-and-links-container {
             width: 100%;
+            max-width: 50rem;
             grid-column: 2 / -1;
             padding: 4rem 0;
             display: flex;

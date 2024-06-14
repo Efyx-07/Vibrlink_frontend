@@ -1,20 +1,14 @@
 import { Metadata } from 'next';
 import { Release } from "@/types/releaseTypes";
 import { fetchReleaseDataBySlug } from "@/services/releasesApi";
-//import VibrlinkCard from '../components/Cards/VibrlinkCard';
-//import VLCardDesktop from '../components/Cards/VLCardDesktop';
 import LoadingSpinner from '../components/Shared/LoadingSpinner';
 import './VibrlinkLandingPage.scss';
 
 import dynamic from 'next/dynamic';
 
-const DynVLCard = dynamic(() => import('../components/Cards/VibrlinkCard'), {
+const DynVLCard = dynamic(() => import('../components/Cards/VLCard'), {
     loading: () => <LoadingSpinner />
 });
-
-// const DynVLCardDesktop = dynamic(() => import('../components/Cards/VLCardDesktop'), {
-//     loading: () => <LoadingSpinner />
-// });
 
 interface VibrlinkPageProps {
     params: { releaseSlug: string };
@@ -47,12 +41,6 @@ export default async function VibrlinkLandingPage({ params }: VibrlinkPageProps)
             {selectedRelease && (
                 <div className="content">
                     <DynVLCard selectedRelease={selectedRelease} />
-                    {/* <div className="mobile-card">
-                        <DynVLCardMobile selectedRelease={selectedRelease} />
-                    </div>
-                    <div className="desktop-card">
-                        <DynVLCardDesktop selectedRelease={selectedRelease} />
-                    </div> */}
                 </div>
             )}
         </div>

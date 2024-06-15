@@ -55,10 +55,13 @@ export default function VCardCoverPlayer({selectedRelease}: SelectedReleaseProps
                 <>
                     <div className="player-icon-container">
                         {isPlaying ? 
-                            (<Icon icon="carbon:pause-outline" onClick={stopPreview} className="icon" />)
+                            (<Icon icon="zondicons:pause-outline" onClick={stopPreview} className="icon" />)
                         :
-                            (<Icon icon="carbon:play-outline" onClick={() => playPreview(selectedRelease.preview)} className="icon"/>)
+                            (<Icon icon="zondicons:play-outline" onClick={() => playPreview(selectedRelease.preview)} className="icon"/>)
                         }
+                    </div>
+                    <div className={` ${isPlaying ? "counter-container" : "hidden-counter-container" }`}>
+                        <CountdownTimer isPlaying={isPlaying} />
                     </div>
                     <div className={` ${isPlaying ? "progress-bar" : "hidden-progress-bar" }`}></div>
                 </>
@@ -66,3 +69,39 @@ export default function VCardCoverPlayer({selectedRelease}: SelectedReleaseProps
         </div>
     )
 };
+
+interface CountdownTimerProps {
+    isPlaying: boolean;
+}
+
+function CountdownTimer ({isPlaying}: CountdownTimerProps) {
+
+    const [count, setCount] = useState<number>(30);
+
+    useEffect(() => {
+        if (!isPlaying) {
+            setCount(30);
+            return
+        }
+
+        if (count <= 0) return;
+
+        const interval: NodeJS.Timeout = setInterval(() => {
+            setCount(prevCount => prevCount -1);
+        }, 1000);
+
+        return () => clearInterval(interval)
+    }, [isPlaying, count]);
+
+    const formatTime = (seconds: number) => {
+        const minutes: number = Math.floor(seconds / 60);
+        const formattedSeconds = seconds % 60;
+        return `${minutes}:${formattedSeconds.toString().padStart(2, '0')}`;
+    };
+
+    return (
+        <div className='countdown-timer'>
+          {formatTime(count)}
+        </div>
+    );
+}

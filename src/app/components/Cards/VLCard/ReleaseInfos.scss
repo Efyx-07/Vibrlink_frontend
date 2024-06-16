@@ -1,7 +1,7 @@
 @import '../../../../assets/sass/colors.scss';
 @import '../../../../assets/sass/breakpoints.scss';
 
-.infos-container {
+.release-infos {
     width: 100%;
     min-height: 5rem;
     display: flex;
@@ -42,7 +42,7 @@
 
 @media (min-width: $breakpointInterDesktop) {
 
-    .infos-container {
+    .release-infos {
         text-align: unset;
         position: unset;
         background: unset;

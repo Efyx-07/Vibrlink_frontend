@@ -1,0 +1,31 @@
+@import '../../assets/sass/colors.scss';
+@import '../../assets/sass/breakpoints.scss';
+
+.pageTitle-container {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    h1 {
+        white-space: nowrap;
+        font-size: 1.5rem;
+        font-weight: 400;
+
+        span {
+            color: $accentColor;
+        }
+    }
+}
+
+@media (min-width: $breakpointLargeTablet) {
+
+    .pageTitle-container {
+        margin-bottom: 4rem;
+
+        h1 {
+            font-size: 1.75rem;
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@import '../../assets/sass/colors.scss';
+@import '../../assets/sass/breakpoints.scss';
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+    
+            span {
+                color: $accentColor
+            }
+        }
+    }
+
+    .buttons-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        #hero-button {
+            width: 100%;
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .text-container p, .buttons-container p {
+        font-size: clamp(1rem, 3vw, 1.25rem);
+        font-weight: 200;
+    }
+}
+
+@media (min-width: $breakpointLargeTablet) {
+
+    .hero-container {
+        gap: 4rem;
+    
+        .buttons-container {
+            flex-direction: row;
+            gap: 2rem;
+    
+            #hero-button {
+                max-width: 20rem;
+    
+                p {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+}

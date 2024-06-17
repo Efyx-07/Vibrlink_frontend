@@ -1,0 +1,40 @@
+@import '../../assets/sass/colors.scss';
+@import '../../assets/sass/breakpoints.scss';
+
+.message-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+
+    h1 {
+        font-size: 2.5rem;
+
+        span {
+            color: $accentColor;
+        }
+    }
+
+    p {
+        font-size: 1rem;
+        font-weight: 200;
+    }
+}
+
+@media (min-width: $breakpointLargeTablet) {
+
+    .message-container {
+        text-align: start;
+        gap: 2rem;
+        width: 100%;
+    
+        h1 {
+            font-size: 3.5rem;
+        }
+    
+        p {
+            font-size: 1.2rem;
+        }
+    }
+}

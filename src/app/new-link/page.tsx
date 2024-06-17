@@ -2,9 +2,9 @@
 
 import MainLayout from "../layouts/MainLayout";
 import useRedirectIfLoggedOut from "@/hooks/useRedirectIfLoggedOut";
-import NewLinkForm from "../components/Release-forms/NewLinkForm";
-import FormPageMessage from "../components/Shared/FormPageMessage";
-import StyledSeparator from "../components/Shared/StyledSeparator";
+import NewLinkForm from "@/components/Release-forms/NewLinkForm";
+import FormPageMessage from "@/components/Shared/FormPageMessage";
+import StyledSeparator from "@/components/Shared/StyledSeparator";
 import '../../assets/sass/pages-common-styles.scss';
 import '../../assets/sass/messageAndFormContainer.scss';
 import '../../assets/sass/form-container.scss';

@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
 import { Release } from "@/types/releaseTypes";
 import { fetchReleaseDataBySlug } from "@/services/releasesApi";
-import LoadingSpinner from '../components/Shared/LoadingSpinner';
+import LoadingSpinner from '@/components/Shared/LoadingSpinner';
 import './VibrlinkLandingPage.scss';
 
 import dynamic from 'next/dynamic';
 
-const DynVLCard = dynamic(() => import('../components/Cards/VLCard'), {
+const DynVLCard = dynamic(() => import('../../components/Cards/VLCard'), {
     loading: () => <LoadingSpinner />
 });
 

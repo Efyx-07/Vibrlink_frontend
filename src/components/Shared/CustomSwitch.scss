@@ -1,0 +1,61 @@
+@import '../../assets/sass/colors.scss';
+
+.switch-container {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    .switch {
+        position: relative;
+        display: block;
+        width: 2.5rem;
+        max-width: 2.5rem;
+        height: .98rem;
+    
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: $darkColor;
+            transition: .5s;
+            border: 1px solid rgba($whiteColor, .25);
+    
+            &:before {
+                position: absolute;
+                content: "";
+                bottom: 0;
+                top: 1.2px;
+                left: 1px;
+                background-color: $whiteColor;
+            }
+        }
+    
+        input {
+            display: none;
+        }
+    
+        input:checked + .slider {
+            background-color: rgba($accentColor, .25);
+        }
+    
+        input:checked + .slider:before {
+            transform: translateX(1.55rem);
+            background: $accentColor;
+        }
+    
+        .round {
+            border-radius: 2rem;
+        }
+    
+        .round:before {
+            width: .7rem;
+            height: .7rem;
+            border-radius: 100%;
+        }
+    }
+
+    .label {
+        font-size: .9rem;
+    }
+
+}

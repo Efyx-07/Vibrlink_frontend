@@ -1,0 +1,19 @@
+@import '../../assets/sass/colors.scss';
+
+.myAccountItem-container {
+    display: flex;
+    height: 100%;
+
+    .myAccountItem {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: transform .2s ease;
+        padding: 0 2rem;
+
+        &:hover {
+            color: $accentColor;
+            transform: translateY(.25rem)
+        }
+    }
+}

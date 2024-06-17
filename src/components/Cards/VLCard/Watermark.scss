@@ -1,0 +1,33 @@
+@import '../../../assets/sass/colors.scss';
+@import '../../../assets/sass/breakpoints.scss';
+
+.watermark {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    font-size: .8rem;
+    background: rgba($whiteColor, .1);
+    margin: .5rem 0;
+
+    p {
+        font-weight: 200;
+    }
+
+    span {
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+            color: $accentColor;
+        }
+    }
+}
+
+@media (min-width: $breakpointInterDesktop) {
+
+    .watermark {
+        background: unset;
+    }
+}

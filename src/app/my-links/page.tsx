@@ -7,9 +7,9 @@ import { useEffect } from "react";
 import { useUserStore, useReleaseStore } from "@/stores";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import DashboardReleaseCard from "../components/Cards/DashboardReleaseCard";
-import PageTitle from "../components/Shared/PageTitle";
-import FormButton from "../components/Shared/FormButton";
+import DashboardReleaseCard from "@/components/Cards/DashboardReleaseCard";
+import PageTitle from "@/components/Shared/PageTitle";
+import FormButton from "@/components/Shared/FormButton";
 import '../../assets/sass/pages-common-styles.scss';
 import './MyLinksPage.scss';
 

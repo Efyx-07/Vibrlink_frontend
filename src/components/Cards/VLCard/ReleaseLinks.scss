@@ -1,0 +1,66 @@
+@import '../../../assets/sass/colors.scss';
+@import '../../../assets/sass/breakpoints.scss';
+
+.links-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: rgba($whiteColor, .1);
+
+    .link-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 5rem;
+        padding: 0 1rem;
+        border-top: solid 1px rgba($whiteColor, .1);
+        cursor: pointer;
+
+        &:hover {
+            background: $darkColor;
+        }
+
+        &:hover > button {
+            background: $whiteColor;
+            color: $darkColor;
+        }
+
+        button {
+            padding: .5rem 1rem;
+            background: transparent;
+            border: solid 1px rgba($whiteColor, .1);
+            color: $whiteColor;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .logo-container {
+            width: 7rem;
+            display: inline-block;
+
+            .img {
+                display: block;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpointInterDesktop) {
+
+    .links-container {
+        background: unset;
+        gap: 1rem;
+
+        .link-container {
+            height: 4.5rem;
+            padding: 0 2rem;
+            background: rgba($whiteColor, .2);
+            border: solid 1px rgba($whiteColor, .1);
+            border-radius: 4rem;
+        }
+    }
+}

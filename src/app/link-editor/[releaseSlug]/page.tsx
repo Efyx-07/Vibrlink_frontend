@@ -6,10 +6,10 @@ import { useParams } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 import { Release } from "@/types/releaseTypes";
 import { useReleaseStore, useUserStore } from "@/stores";
-import DashboardReleaseCard from "@/app/components/Cards/DashboardReleaseCard";
-import LinkEditorForm from "@/app/components/Release-forms/LinkEditorForm";
-import LoadingSpinner from "@/app/components/Shared/LoadingSpinner";
-import PageTitle from "@/app/components/Shared/PageTitle";
+import DashboardReleaseCard from "@/components/Cards/DashboardReleaseCard";
+import LinkEditorForm from "@/components/Release-forms/LinkEditorForm";
+import LoadingSpinner from "@/components/Shared/LoadingSpinner";
+import PageTitle from "@/components/Shared/PageTitle";
 import '../../../assets/sass/pages-common-styles.scss';
 import './LinkEditorPage.scss';
 

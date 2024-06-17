@@ -1,20 +1,20 @@
 "use client"
 
 import useAppInitializer from "@/hooks/AppInitializer";
-import LoadingSpinner from "../components/Shared/LoadingSpinner";
+import LoadingSpinner from "@/components/Shared/LoadingSpinner";
 import dynamic from "next/dynamic";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import './MainLayout.scss';
 
 // get the modals dynamically with dynamic
-const DynSignoutModal = dynamic(() => import('../components/Modals/SignoutModal'), {
+const DynSignoutModal = dynamic(() => import('../../components/Modals/SignoutModal'), {
   loading: () => <LoadingSpinner />
 });
-const DynDeleteAccountModal = dynamic(() => import('../components/Modals/DeleteAccountModal'), {
+const DynDeleteAccountModal = dynamic(() => import('../../components/Modals/DeleteAccountModal'), {
   loading: () => <LoadingSpinner />
 });
-const DynRemoveReleaseModal = dynamic(() => import('../components/Modals/RemoveReleaseModal'), {
+const DynRemoveReleaseModal = dynamic(() => import('../../components/Modals/RemoveReleaseModal'), {
   loading: () => <LoadingSpinner />
 });
 

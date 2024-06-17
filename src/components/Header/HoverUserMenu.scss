@@ -1,0 +1,66 @@
+@import '../../assets/sass/colors.scss';
+@import '../../assets/sass/breakpoints.scss';
+
+.hover-user-menu {
+    width: 15rem;
+    background: $darkColor;
+    color: $darkColor;
+    border: solid 4px $accentColor;
+    border-radius: .5rem;
+    position: absolute;
+    top: 5rem;
+    right: -1.5rem;
+
+    .items-container {
+        display: flex;
+        flex-direction: column;
+
+        .userEmail-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background: $darkColor;
+            color: $whiteColor;
+            border-bottom: solid 1px rgba($whiteColor, .25);
+
+            p {
+                font-size: .75rem;
+                font-weight: 400;
+                opacity: .75;
+            }
+        }
+
+        .item-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: .5rem;
+            padding: 1rem;
+            background: $whiteColor;
+            transition: all .2s ease;
+            cursor: pointer;
+
+            &:hover {
+                background: $darkColor;
+                color: $whiteColor;
+            }
+
+            .icon {
+                font-size: 1.25rem;
+            }
+
+            p {
+                font-size: .9rem;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpointLargeTablet) {
+
+    .hover-user-menu {
+        right: 0;
+    }
+}

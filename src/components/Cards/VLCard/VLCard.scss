@@ -1,0 +1,53 @@
+@import '../../../assets/sass/breakpoints.scss';
+
+.vl-card-mobile {
+    width: 100%;
+    max-width: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.vl-card-desktop {
+    display: none;
+}
+
+@media (min-width: $breakpointInterDesktop) {
+
+    .vl-card-mobile {
+        display: none;
+    }
+
+    .vl-card-desktop {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        position: relative;
+        height: 100dvh;
+        width: 100%;
+        overflow-y: scroll;
+        padding: 4rem;
+
+        .cover-player-container {
+            position: fixed;
+            width: 33%;
+            max-width: 35rem;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-left: 10rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .title-and-links-container {
+            width: 100%;
+            max-width: 45rem;
+            grid-column: 2 / -1;
+            padding: 4rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+}

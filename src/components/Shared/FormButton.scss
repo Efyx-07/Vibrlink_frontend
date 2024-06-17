@@ -1,0 +1,24 @@
+@import '../../assets/sass/colors.scss';
+
+.form-button {
+    width: 14rem;
+    width: 100%;
+    height: 4.5rem;
+    color: $accentColor;
+    background: rgba($accentColor, .05);
+    border: solid 1px rgba($accentColor, .5);
+    cursor: pointer;
+    transition: transform .2s ease;
+
+    p {
+        font-size: 1.25rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+
+    &:hover {
+        background: rgba($accentColor, .25);
+        border-color: rgba($accentColor, 1);
+        transform: translateY(.25rem);
+    }
+}

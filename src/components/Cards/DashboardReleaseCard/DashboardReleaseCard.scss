@@ -1,0 +1,72 @@
+@import '../../../assets/sass/colors.scss';
+@import '../../../assets/sass/breakpoints.scss';
+
+.dashboard-releaseCard {
+    width: 100%;
+    border: solid 1px rgba($whiteColor, .1);
+    background: $darkColorRelief;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    transition: all .4s ease;
+
+    &:hover {
+        border-color: rgba($accentColor, .5);
+        transform: translateY(-.5rem);
+    }
+
+    .card-imageAndInfos-container {
+        display: flex;
+        gap: 1rem;
+
+        .image-container {
+            width: 100%;
+            max-width: 13rem;
+            max-height: 13rem;
+            display: inline-block;
+            overflow: hidden;
+    
+            .img {
+                display: block;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+    
+        .infos-container {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+    
+            .title {
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+    
+            .artist {
+                font-size: .9rem;
+                opacity: .75;
+            }
+        }
+    }
+
+    .buttons-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+}
+
+@media (min-width: $breakpointLargeTablet) {
+
+    .dashboard-releaseCard {
+        display: grid;
+        grid-template-columns: 4fr 1.5fr;
+        gap: 2rem;
+    }
+}

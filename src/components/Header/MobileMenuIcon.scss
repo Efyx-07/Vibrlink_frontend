@@ -1,0 +1,11 @@
+@import '../../assets/sass/colors.scss';
+@import '../../assets/sass/breakpoints.scss';
+
+.menu-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    &:hover {
+        color: $accentColor;
+    }
+}

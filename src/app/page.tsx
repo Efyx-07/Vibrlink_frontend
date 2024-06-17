@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import MainLayout from "./layouts/MainLayout";
-import Hero from "./components/Home-Page/Hero";
+import Hero from "@/components/Home-Page/Hero";
 import '../assets/sass/pages-common-styles.scss';
 
 export const metadata: Metadata = {

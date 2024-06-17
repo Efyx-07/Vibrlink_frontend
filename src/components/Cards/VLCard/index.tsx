@@ -1,5 +1,3 @@
-"use client"
-
 import { Release } from "@/types/releaseTypes";
 import VCardCoverPlayer from "./VCardCoverPlayer";
 import ReleaseInfos from "./ReleaseInfos";

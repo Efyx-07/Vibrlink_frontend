@@ -1,3 +1,5 @@
+"use client"
+
 import { openInANewTab } from "@/hooks/openInANewTab";
 import { useGlobalDataStore } from "@/stores";
 import './Watermark.scss';

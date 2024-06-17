@@ -1,3 +1,5 @@
+"use client"
+
 import { Release } from '@/types/releaseTypes';
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";

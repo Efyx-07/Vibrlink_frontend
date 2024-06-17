@@ -1,3 +1,5 @@
+"use client"
+
 import { Release } from "@/types/releaseTypes";
 import Image from "next/image";
 import { openInANewTab } from "@/hooks/openInANewTab";

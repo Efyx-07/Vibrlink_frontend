@@ -1,6 +1,6 @@
 import { useUserStore, useReleaseStore } from '@/stores';
 import { useEffect, useState, useRef } from 'react';
-import isTokenExpired from './VerifyUserTokenExpiry';
+import isTokenExpired from './verifyUserTokenExpiry';
 import { useRouter } from 'next/navigation';
 
 // hook to initialize app with neede datas. Used in => MainLayout.

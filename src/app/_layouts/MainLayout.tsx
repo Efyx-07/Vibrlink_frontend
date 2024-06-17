@@ -1,6 +1,6 @@
 "use client"
 
-import useAppInitializer from "@/hooks/AppInitializer";
+import useAppInitializer from "@/hooks/useAppInitializer";
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
 import dynamic from "next/dynamic";
 import Header from "@/components/Header";

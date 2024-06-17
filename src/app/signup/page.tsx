@@ -1,6 +1,6 @@
 "use client"
 
-import MainLayout from "../layouts/MainLayout";
+import MainLayout from "../_layouts/MainLayout";
 import useRedirectIfLoggedIn from "@/hooks/useRedirectIfLoggedIn";
 import FormPageMessage from "@/components/Shared/FormPageMessage";
 import StyledSeparator from "@/components/Shared/StyledSeparator";

@@ -1,6 +1,6 @@
 "use client"
 
-import MainLayout from "../layouts/MainLayout";
+import MainLayout from "../_layouts/MainLayout";
 import useRedirectIfLoggedOut from "@/hooks/useRedirectIfLoggedOut";
 import NewLinkForm from "@/components/Release-forms/NewLinkForm";
 import FormPageMessage from "@/components/Shared/FormPageMessage";

@@ -1,6 +1,6 @@
 "use client"
 
-import MainLayout from "../layouts/MainLayout";
+import MainLayout from "../_layouts/MainLayout";
 import useRedirectIfLoggedIn from "@/hooks/useRedirectIfLoggedIn";
 import { useState } from "react";
 import LoginForm from "@/components/User-forms/LoginForm";

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import MainLayout from "./layouts/MainLayout";
+import MainLayout from "./_layouts/MainLayout";
 import Hero from "@/components/Home-Page/Hero";
 import '../assets/sass/pages-common-styles.scss';
 

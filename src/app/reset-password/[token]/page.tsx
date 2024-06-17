@@ -1,6 +1,6 @@
 "use client"
 
-import MainLayout from "@/app/layouts/MainLayout";
+import MainLayout from "@/app/_layouts/MainLayout";
 import useRedirectIfLoggedIn from "@/hooks/useRedirectIfLoggedIn";
 import ResetPasswordForm from "@/components/User-forms/ResetPasswordForm";
 import '../../../assets/sass/pages-common-styles.scss';

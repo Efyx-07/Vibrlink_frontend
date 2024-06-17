@@ -1,6 +1,6 @@
 "use client"
 
-import MainLayout from "@/app/layouts/MainLayout";
+import MainLayout from "@/app/_layouts/MainLayout";
 import useRedirectIfLoggedOut from "@/hooks/useRedirectIfLoggedOut";
 import { useParams } from "next/navigation";
 import { useEffect, useState, useRef } from "react";

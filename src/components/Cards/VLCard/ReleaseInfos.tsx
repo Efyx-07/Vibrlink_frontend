@@ -7,7 +7,7 @@ interface ReleaseInfosProps {
 
 export default function ReleaseInfos({selectedRelease}: ReleaseInfosProps) {
     return (
-        <div className="infos-container">
+        <div className="release-infos">
             <p className="title">{selectedRelease.artist} - {selectedRelease.title}</p>
             <p className="mention">Choose your platform</p>
             <div className="triangle"></div>

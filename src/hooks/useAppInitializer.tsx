@@ -1,5 +1,5 @@
 import { useUserStore, useReleaseStore } from '@/stores';
-import isTokenExpired from './verifyUserTokenExpiry';
+import isTokenExpired from './checkUserTokenExpiry';
 import { useEffect, useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 

@@ -90,22 +90,22 @@
                 }
             }
 
-            .confirm {
+            .secondary-button {
+                background: transparent;
+                border: solid 1px $darkColor; 
+
+                &:hover {
+                    background: rgba($darkColor, .1);
+                }
+            }
+
+            .primary-button {
                 background: $darkColor;
                 color: $whiteColor;
                 border: none;
 
                 &:hover {
                     background: rgba($darkColor, .9);
-                }
-            }
-
-            .cancel {
-                background: transparent;
-                border: solid 1px $darkColor; 
-
-                &:hover {
-                    background: rgba($darkColor, .1);
                 }
             }
         }

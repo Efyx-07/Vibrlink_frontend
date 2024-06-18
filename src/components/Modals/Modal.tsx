@@ -24,8 +24,8 @@ export default function Modal({ icon, topline, message, onConfirm, onCancel }: M
                         <p className="message">{message}</p>
                     </div>
                     <div className="buttons-container">
-                        <button className="confirm" onClick={onConfirm}>Confirm</button>
-                        <button className="cancel" onClick={onCancel}>Cancel</button>
+                        <button className="secondary-button" onClick={onCancel}>Cancel</button>
+                        <button className="primary-button" onClick={onConfirm}>Confirm</button>
                     </div>
                 </div>
             </div>

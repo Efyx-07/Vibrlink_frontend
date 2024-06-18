@@ -10,8 +10,8 @@ interface LinkEditorSelectProps {
 
 export default function LinkEditorSelect({onChange, platformsWithoutUrl, defaultOptionValue}: LinkEditorSelectProps) {
     return (
-        <select onChange={onChange} id="platform-select">
-            <option disabled selected className="default-option">{defaultOptionValue}</option>
+        <select onChange={onChange} id="platform-select" defaultValue={defaultOptionValue}>
+            <option disabled value={defaultOptionValue} className="default-option">{defaultOptionValue}</option>
             {platformsWithoutUrl.map(platform => (
                 <option key={platform.id} value={platform.id}>{platform.name}</option>
             ))}

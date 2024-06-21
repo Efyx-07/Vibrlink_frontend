@@ -35,7 +35,7 @@ export default function AskResetPasswordForm() {
     };
 
     // function to reset the form
-    const resetForm = () => {
+    const resetForm = (): void => {
         setEmail('');
     };
 

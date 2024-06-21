@@ -51,7 +51,7 @@ export default function LoginForm() {
     };
 
     // function to reset the form
-    const resetForm = () => {
+    const resetForm = (): void => {
         setEmail('');
         setPassword('');
     };

@@ -66,7 +66,7 @@ export default function UpdatePasswordForm() {
         }
     };
 
-    const handleErrorAndApply = () => {
+    const handleErrorAndApply = (): void => {
         setErrorMessage(true);
             setIsLoading(false);
             // if error reset the form after 3s
@@ -77,7 +77,7 @@ export default function UpdatePasswordForm() {
     };
 
     // function to reset the form
-    const resetForm = () => {
+    const resetForm = (): void => {
         setCurrentPassword('');
         setNewUserPassword('');
         setConfirmNewUserPassword('');

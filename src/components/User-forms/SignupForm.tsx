@@ -51,7 +51,7 @@ export default function SignupForm() {
         }
     };
 
-    const handleErrorAndApply = () => {
+    const handleErrorAndApply = (): void => {
         setErrorMessage(true);
             setIsLoading(false);
             // if error reset the form after 3s
@@ -62,7 +62,7 @@ export default function SignupForm() {
     };
 
     // function to reset the form
-    const resetForm = () => {
+    const resetForm = (): void => {
         setEmail('');
         setPassword('');
         setConfirmPassword('');

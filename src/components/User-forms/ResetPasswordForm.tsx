@@ -58,7 +58,7 @@ export default function ResetPasswordForm() {
     };
 
     // function to reset the form
-    const resetForm = () => {('');
+    const resetForm = (): void => {('');
         setNewPassword('');
         setConfirmNewPassword('');
     };

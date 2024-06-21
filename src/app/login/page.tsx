@@ -17,11 +17,11 @@ export default function LoginPage() {
 
     const [isLoginFormVisible, setIsLoginFormVisible] = useState(true);
 
-    const hideLoginForm = () => {
+    const hideLoginForm = (): void => {
         setIsLoginFormVisible(false)
     };
 
-    const showLoginForm = () => {
+    const showLoginForm = (): void => {
         setIsLoginFormVisible(true)
     };
 

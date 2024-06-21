@@ -29,7 +29,7 @@ export default function DeleteAccountModal() {
         }
     };
 
-    const handleCancel = () => {
+    const handleCancel = (): void => {
         closeDeleteAccountModal();
     };
     

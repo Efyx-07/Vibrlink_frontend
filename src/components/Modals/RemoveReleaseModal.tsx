@@ -47,7 +47,7 @@ export default function RemoveReleaseModal() {
         }
     };
 
-    const handleCancel = () => {
+    const handleCancel = (): void => {
         closeRemoveReleaseModal();
     };
 

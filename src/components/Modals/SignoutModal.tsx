@@ -9,14 +9,14 @@ export default function SignoutModal() {
     const userStore = useUserStore();
     const router = useRouter();
 
-    const handleSignoutAndNavToHomePage = () => {
+    const handleSignoutAndNavToHomePage = (): void => {
         releaseStore.releases = [];
         userStore.logOutUser();
         closeSignOutModal();
         router.push('/');
     };
 
-    const handleCancel = () => {
+    const handleCancel = (): void => {
         closeSignOutModal();
     };
 

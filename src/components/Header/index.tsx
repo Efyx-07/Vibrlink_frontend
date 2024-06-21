@@ -12,13 +12,16 @@ export default function Header() {
 
     // state for the open status of the mobile menu
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [isDisplayed, setIsDisplayed] = useState<boolean>(true);
 
     const openMobileMenu = (): void => {
         setIsOpen(true);
+        setIsDisplayed(false);
     };
 
     const closeMobileMenu = (): void => {
         setIsOpen(false);
+        setIsDisplayed(true);
     };
 
     return (
@@ -30,7 +33,7 @@ export default function Header() {
                     <MyAccountItem />
                 </div>
                 <div className="nav-wrapper-mobile">
-                    <MyAccountItem />
+                    {isDisplayed && <MyAccountItem /> }
                     <MobileMenuIcon 
                         isOpen={isOpen}
                         onOpenClick={openMobileMenu}

@@ -5,6 +5,8 @@ import useRedirectIfLoggedOut from "@/hooks/useRedirectIfLoggedOut";
 import FormPageMessage from "@/components/Shared/FormPageMessage";
 import StyledSeparator from "@/components/Shared/StyledSeparator";
 import UpdatePasswordForm from "@/components/User-forms/UpdatePasswordForm";
+import Separator from "@/components/Shared/Separator";
+import DeleteAccount from "@/components/User-forms/DeleteAccount";
 import '../../assets/sass/pages-common-styles.scss';
 import '../../assets/sass/messageAndFormContainer.scss';
 import '../../assets/sass/form-container.scss';
@@ -27,6 +29,8 @@ export default function AccountSettingsPage() {
                             <StyledSeparator icon="game-icons:police-officer-head" />
                             <div className="form-container">
                                 <UpdatePasswordForm />
+                                <Separator />
+                                <DeleteAccount />
                             </div>
                         </div>
                     </div>

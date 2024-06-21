@@ -30,21 +30,18 @@ export default function HoverUserMenu() {
         router.push('/account-settings');
     };
 
-    const { openSignOutModal, openDeleteAccountModal } = useModalStore();
+    const { openSignOutModal } = useModalStore();
 
     return (
-        <>
         <div className="hover-user-menu">
             <div className="items-container">
                 <div className="userEmail-container">
                     <Icon icon="" className='icon'/>
                     <p>{user?.email}</p>
                 </div>
-                <UserItem name="Update password" icon="mdi:tools" onClick={navToSettings} />
-                <UserItem name="Delete account" icon="mdi:skull-crossbones" onClick={openDeleteAccountModal} />
+                <UserItem name="Account settings" icon="mdi:tools" onClick={navToSettings} />
                 <UserItem name="Sign out" icon="material-symbols:logout-sharp" onClick={openSignOutModal} />
             </div>
         </div>
-        </>
     )
 };

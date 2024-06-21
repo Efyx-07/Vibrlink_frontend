@@ -31,11 +31,11 @@ export default function useUrlState(platforms: Platform[]) {
         }
     }, [platformIdsToAdd]);
 
-    const handleUrlChange = (platformId: number, url: string) => {
+    const handleUrlChange = (platformId: number, url: string): void => {
         setNewUrls(prevUrls => ({ ...prevUrls, [platformId]: url }));
     };
 
-    const addToPlatformsWithUrl = async () => {
+    const addToPlatformsWithUrl = async (): Promise<void> => {
         if (selectedPlatform && newUrls[selectedPlatform.id]) {
             const newUrl = newUrls[selectedPlatform.id];
 
@@ -56,7 +56,7 @@ export default function useUrlState(platforms: Platform[]) {
         setShouldUpdateAfterPlatformAdding(true);
     };
 
-    const handlePlatformChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const handlePlatformChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
         const platformId = parseInt(e.target.value);
         const platform = platforms.find(p => p.id === platformId);
         if (platform) {

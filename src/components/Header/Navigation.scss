@@ -1,8 +1,11 @@
 @import '../../assets/sass/colors.scss';
+@import '../../assets/sass/breakpoints.scss';
 
 .navItems-container {
     display: flex;
-    height: 100%;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 10rem;
 
     .navItem {
         display: flex;
@@ -10,10 +13,25 @@
         cursor: pointer;
         transition: transform .2s ease;
         padding: 0 2rem;
+        font-size: 1.25rem;
 
         &:hover {
             color: $accentColor;
             transform: translateY(.25rem)
+        }
+    }
+}
+
+@media (min-width: $breakpointLargeTablet) {
+
+    .navItems-container {
+        height: 100%;
+        flex-direction: unset;
+        gap: unset;
+        margin-bottom: unset;
+
+        .navItem {
+            font-size: 1rem;
         }
     }
 }

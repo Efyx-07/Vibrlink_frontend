@@ -10,6 +10,8 @@
     width: 100vw;
     height: calc(100dvh - 5rem);
     background: $darkColorRelief;
+    display: flex;
+    align-items: center;
     transition: .2s ease-in-out;
 }
 

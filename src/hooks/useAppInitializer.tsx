@@ -4,10 +4,10 @@ import { useEffect, useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 
 // hook to initialize app with neede datas. Used in => MainLayout.
-export default function useAppInitializer() {
+export default function useAppInitializer(): boolean {
     const [loading, setLoading] = useState<boolean>(true);
 
-    const appInitializationLoading = useAppInitialization();
+    const appInitializationLoading: boolean = useAppInitialization();
     useTokenExpirationCheck();
 
     useEffect(() => {

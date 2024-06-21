@@ -16,7 +16,7 @@ export default function CopyToClipboardButton ({ release }: CopyToClipboardButto
 
     const [copied, setCopied] = useState<boolean>(false);
 
-    const handleCopy = () => {
+    const handleCopy = (): void => {
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     }

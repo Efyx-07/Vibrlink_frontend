@@ -1,0 +1,13 @@
+@import '../../../assets/sass/colors.scss';
+
+.date-infos {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+
+    p {
+        font-size: .75rem;
+        font-weight: 200;
+        color: $accentColor;
+    }
+}

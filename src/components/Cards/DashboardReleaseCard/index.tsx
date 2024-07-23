@@ -6,6 +6,7 @@ import { openInANewTab } from "@/hooks/openInANewTab";
 import Image from "next/image";
 import DBCardButton from "./DBCardButton";
 import CopyToClipboardButton from "./CopyToClipboardButton";
+import DBDatesThumbnail from "./DBDatesThumbnail";
 import './DBCardButton.scss';
 import './DashboardReleaseCard.scss';
 
@@ -28,13 +29,13 @@ export default function DashboardReleaseCard({ release }: DashboardReleaseCardPr
         openInANewTab(`/${releaseSlug}`);
     };
 
-    // remove the buttons display from the component when in LinkEditorPage 
-   const pathname = usePathname();
-    const [shouldShowButtons, setShouldShowButtons] = useState<boolean>(true);
+    // remove some elements display from the component when in LinkEditorPage 
+    const pathname = usePathname();
+    const [shouldBeShown, setShouldBeShown] = useState<boolean>(true);
 
     useEffect(() => {
         const isLinkEditorPage = pathname.includes('/link-editor');
-        setShouldShowButtons(!isLinkEditorPage);
+        setShouldBeShown(!isLinkEditorPage);
     }, [pathname]);
     
     return (
@@ -51,11 +52,16 @@ export default function DashboardReleaseCard({ release }: DashboardReleaseCardPr
                     />
                 </div>
                 <div className="infos-container">
-                    <p className="title">{release.title}</p>
-                    <p className="artist">{release.artist}</p>
+                    <div className="release-infos">
+                        <p className="title">{release.title}</p>
+                        <p className="artist">{release.artist}</p>
+                    </div>
+                    {shouldBeShown && 
+                        <DBDatesThumbnail release={release} />
+                    }
                 </div>
             </div>
-            {shouldShowButtons &&
+            {shouldBeShown &&
                 <div className="buttons-container">
                     <DBCardButton name="Edit link" icon="mdi:tools" onClick={() => navToReleaseToEditPage(release.slug)}/>
                     <DBCardButton name="Delete link" icon="mdi:skull-crossbones" onClick={() => openRemoveReleaseModal(release.id)}/>

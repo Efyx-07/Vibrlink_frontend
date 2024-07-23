@@ -4,6 +4,8 @@ export interface Release {
     artist: string;
     cover: string;
     preview: string;
+    creationDate: Date;
+    lastUpdate: Date;
     userID: number;
     slug: string;
     platforms: Platform[]

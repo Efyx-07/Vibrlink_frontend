@@ -39,16 +39,23 @@
         .infos-container {
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             gap: .5rem;
-    
-            .title {
-                font-size: 1.5rem;
-                font-weight: 600;
-            }
-    
-            .artist {
-                font-size: .9rem;
-                opacity: .75;
+
+            .release-infos {
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+
+                .title {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                }
+        
+                .artist {
+                    font-size: .9rem;
+                    opacity: .75;
+                }
             }
         }
     }

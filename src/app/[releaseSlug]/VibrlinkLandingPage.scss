@@ -11,8 +11,8 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        background: rgba(black, .4);
-        backdrop-filter: blur(1rem);
+        background: rgba(black, .75);
+        backdrop-filter: blur(2rem);
         box-sizing: border-box;
         overflow-y: auto;
     }

@@ -52,7 +52,7 @@ export default function DashboardReleaseCard({ release }: DashboardReleaseCardPr
                     />
                 </div>
                 <div className="infos-container">
-                    <div className="release-infos">
+                    <div className="DBrelease-infos">
                         <p className="title">{release.title}</p>
                         <p className="artist">{release.artist}</p>
                     </div>

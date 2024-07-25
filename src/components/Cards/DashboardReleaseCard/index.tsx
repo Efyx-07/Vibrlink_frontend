@@ -7,6 +7,7 @@ import Image from "next/image";
 import DBCardButton from "./DBCardButton";
 import CopyToClipboardButton from "./CopyToClipboardButton";
 import DBDatesThumbnail from "./DBDatesThumbnail";
+import Separator from "@/components/Shared/Separator";
 import './DBCardButton.scss';
 import './DashboardReleaseCard.scss';
 
@@ -53,11 +54,24 @@ export default function DashboardReleaseCard({ release }: DashboardReleaseCardPr
                 </div>
                 <div className="infos-container">
                     <div className="DBrelease-infos">
+                        <div className="artist-infos">
+                            <Image 
+                                className="artist-thumbnail"
+                                src={release.artistImage}
+                                width={500}
+                                height={500}
+                                alt={release.artist}
+                                priority
+                            />
+                            <p className="artist-name">{release.artist}</p>
+                        </div>
                         <p className="title">{release.title}</p>
-                        <p className="artist">{release.artist}</p>
                     </div>
                     {shouldBeShown && 
-                        <DBDatesThumbnail release={release} />
+                        <>
+                            <Separator />
+                            <DBDatesThumbnail release={release} />
+                        </>
                     }
                 </div>
             </div>

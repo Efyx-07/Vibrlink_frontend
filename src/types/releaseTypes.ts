@@ -2,6 +2,8 @@ export interface Release {
     id: number;
     title: string;
     artist: string;
+    artistId: string;
+    artistImage: string;
     cover: string;
     preview: string;
     creationDate: Date;

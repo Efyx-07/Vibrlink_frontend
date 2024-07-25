@@ -1,6 +1,7 @@
 "use client"
 
 import MainLayout from "../_layouts/MainLayout";
+import { useRouter } from "next/navigation";
 import useRedirectIfLoggedIn from "@/hooks/useRedirectIfLoggedIn";
 import FormPageMessage from "@/components/Shared/FormPageMessage";
 import StyledSeparator from "@/components/Shared/StyledSeparator";
@@ -12,6 +13,8 @@ import '../../assets/sass/form-container.scss';
 export default function SignupPage() {
 
     useRedirectIfLoggedIn();
+
+    const router = useRouter();
     
     const mainTextPrimary: string = 'Create';
     const mainTextSecondary: string = ' a free account';
@@ -27,6 +30,7 @@ export default function SignupPage() {
                             <StyledSeparator icon="simple-icons:freepik" />
                             <div className="form-container">
                                 <SignupForm />
+                                <p className="option" onClick={() => router.push('/login')}>Already have an account ? Sign in</p>
                             </div>
                         </div>
                     </div>

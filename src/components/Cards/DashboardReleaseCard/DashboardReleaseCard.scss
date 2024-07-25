@@ -53,7 +53,7 @@
                     gap: .5rem;
 
                     .artist-thumbnail {
-                        width: clamp(1.5rem, 2vw, 2.25rem);
+                        width: clamp(1.5rem, 2.5vw, 2.25rem);
                         height: auto;
                         border-radius: 100%;
                         border: solid 2px $whiteColor;
@@ -88,5 +88,9 @@
         display: grid;
         grid-template-columns: 4fr 1.5fr;
         gap: 2rem;
+
+        .card-imageAndInfos-container {
+            gap: 1.5rem;
+        }
     }
 }

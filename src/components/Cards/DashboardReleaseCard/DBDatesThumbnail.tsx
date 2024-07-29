@@ -8,17 +8,16 @@ interface DBDatesThumbnailProps {
 
 export default function DBDatesThumbnail({release}: DBDatesThumbnailProps) {
 
-    // convert the date objects
-    const creationDate = typeof release.creationDate === 'string' ? new Date(release.creationDate) : release.creationDate;
-    const lastUpdate = typeof release.lastUpdate === 'string' ? new Date(release.lastUpdate) : release.lastUpdate;
+    const creationDate: Date = release.creationDate;
+    const lastUpdate: Date = release.lastUpdate;
 
     // format the date in YYYY-MM-DD
-    const formatDate = (date: Date) => {
+    const formatDate = (date: Date): string => {
         return format(date, 'yyyy-MM-dd'); 
     };
 
     // fonction to count the time since the last update
-    const timeAgo = (date: Date) => {
+    const timeAgo = (date: Date): string => {
         return formatDistanceToNow(date, { addSuffix: true });
     };
 
